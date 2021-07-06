@@ -30,7 +30,7 @@ alert("Welcome to my Website!")
 var favoriteColor = prompt("What is your favorite color?");
 console.log("Wow! " + favoriteColor + " is my favorite color, too!");
 
-var littleMermaid = prompt("How many days will you be renting the Little Mermaid?");
+var littleMermaid = prompt("How many days will you be renting The Little Mermaid?");
 var brotherBear = prompt("How many days will you be renting Brother Bear?");
 var hercules = prompt("How many days will you be renting Hercules?");
 var rateToRent = 3;
@@ -46,8 +46,9 @@ var hoursWorkedFacebook = prompt("How many hours did you work with Facebook this
 var totalPayThisWeek = ((googlePay * hoursWorkedGoogle) + (amazonPay * hoursWorkedAmazon) + (facebookPay * hoursWorkedFacebook))
 alert("You will be paid " + totalPayThisWeek + " dollars this week.")
 
-var classFull = false;
-var scheduleConflict = false;
+
+var classFull = confirm("Is the class full? If so, click \'OK\'. If not, click \'Cancel\'.");
+var scheduleConflict = confirm("Is there a scheduling conflict? If so, click \'OK\'. If not, click \'Cancel\'.");
 
 if (classFull === true || scheduleConflict === true) {
     alert("Sorry you can't enroll.");
@@ -55,10 +56,12 @@ if (classFull === true || scheduleConflict === true) {
     alert("You are now enrolled!");
 }
 
-//var howManyItems = prompt("How many items do you have?");
-//
-//if (howManyItems >= 3) {
-//    alert("");
-//} else {
-//    alert("");
-//}
+var howManyItems = prompt("How many items do you have?");
+var areYouPremium = confirm("Are you a Premium member? If so, please click \'OK\'. If not, click \'Cancel\'.");
+var validOffer = confirm("Is the offer valid? If so, please click \'OK\'. If not, click \'Cancel\'.")
+
+if ((howManyItems <=2 || areYouPremium === false) && validOffer === false) {
+    alert("I'm sorry. We cannot apply this offer.");
+} else {
+    alert("Offer has been applied.");
+}
