@@ -56,22 +56,13 @@ if (classFull === true || scheduleConflict === true) {
     alert("You are now enrolled!");
 }
 
-//var howManyItems = prompt("How many items do you have?");
-//var areYouPremium = confirm("Are you a Premium member? If so, please click \'OK\'. If not, click \'Cancel\'.");
-//var validOffer = confirm("Is the offer valid? If so, please click \'OK\'. If not, click \'Cancel\'.")
-//if ((howManyItems <=2 || areYouPremium === false) && validOffer === false) {
-//    alert("I'm sorry. We cannot apply this offer.");
-//} else {
-//    alert("Offer has been applied.");
-//}
-
 var howManyItems = prompt("How many items do you have?");
 var areYouPremium = confirm("Are you a Premium member? If so, please click \'OK\'. If not, click \'Cancel\'.");
 var validOffer = confirm("Is the offer valid? If so, please click \'OK\'. If not, click \'Cancel\'.")
-if (!validOffer) {
-    alert("I'm sorry. We cannot apply this offer.");
-} else if((howManyItems <=2 || !areYouPremium)) {
-    alert("I'm sorry. We cannot apply this offer.");
-} else{
+if (areYouPremium && validOffer){
     alert("Offer has been applied.");
+} else if (howManyItems >= 2 && validOffer) {
+    alert("Offer has been applied.");
+} else{
+    alert("I'm sorry. We cannot apply this offer.");
 }
