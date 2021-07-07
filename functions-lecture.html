@@ -181,17 +181,22 @@
     return alert("This is your new word is: " + string1.substring(0, number1));
   }
 
-  console.log(getSmallerSegment(string1, number1));
+  getSmallerSegment(string1, number1);
 
   // example input: getSmallerSegment("Codeup", 3)
   // example output: "cod"
 
   // Refactor the following code to use functions...
 
+
+
+  //FUNCTION FOR ALL BELOW REFRACTION PROBLEMS.
+
   // var x = 2;
   // var y = 4;
   // var totalXY = x + y;
   // console.log('The result of num1 + num2 is: ' + totalXY);
+
   //
   // var a = 5;
   // var b = 1;
@@ -202,6 +207,17 @@
   // var d = 5;
   // var totalCD = c + d;
   // console.log('The result of num1 + num2 is: ' + totalCD);
+
+  var numberOne = prompt("Please enter the first number.")
+  var numberTwo = prompt("Please enter the second number.")
+  function twoNumbersAdded(numberOne, numberTwo) {
+    var totalSum = (parseFloat(numberOne) + parseFloat(numberTwo));
+    return alert("The result of the two numbers added together is: " + totalSum)
+  }
+
+  twoNumbersAdded(numberOne, numberTwo);
+
+  //ABOVE FUNCTION WORKS FOR ALL REFRACTIONS BELOW. USER WILL ENTER TWO NUMBERS WITH AN OUTPUT OF THOSE NUMBERS ADDED TOGETHER.
 
 
   // ================ Function Scope
