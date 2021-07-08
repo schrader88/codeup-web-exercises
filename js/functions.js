@@ -91,7 +91,7 @@ function calculateTip(tipPercentage, totalBill) {
  */
 
 
-var tipPercentage = prompt("What percentage would you like to tip?");
+var tipPercentage = prompt("What percentage would you like to tip? (Ex: 25% = .25)");
 var totalBill = prompt("What is the total on the bill?");
 function calculateTip(tipPercentage, totalBill) {
     alert("Today, your tip will be $" + (parseFloat(tipPercentage) * parseFloat(totalBill)).toFixed(2) + "! Thank you for dining with us.");
