@@ -127,8 +127,16 @@
 
 // OR //
 
-function alertMVPCustomer(totalPurchase) {
-    return totalPurchase > 1000;
-}
+//function alertMVPCustomer(totalPurchase) {
+//    return totalPurchase > 1000;
+//}
+
+//var whatTheCustomerSpent = 1001;
+
+//DON'T do this!
+//Don't call a global variable from inside a function
+//var isMVPCustomer = function(){
+//    return whatTheCustomerSpent > 1000;
+//}
 
 // REMEMBER THAT THE FUNCTIONS IN THE ASSESSMENT NEED TO OUTPUT A BOOLEAN!!
