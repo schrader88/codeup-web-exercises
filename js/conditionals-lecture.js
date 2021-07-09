@@ -75,10 +75,60 @@
 
 // format used for assessment below. no alerts, no prompts, no confirm - just boolean responses.
 
-function isdivisibleByFive(num) {
-    if (num % 5 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+//function isDivisibleByFive(num) {
+//    if (num % 5 === 0) {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+
+// OR //
+
+//function isDivisibleByFive(num){
+//    return (num % 5 === 0);
+//}
+
+// typeof examples and explanation
+
+//var email;
+
+//if (typeof email === "undefined") {
+//    alert("That's undefined!");
+//} else {
+//    alert("That's not undefined!");
+//}
+
+// BELOW IS A typeof EXAMPLE THAT WOULD WORK FOR ASSESSMENT
+
+//function isUndefined(input) {
+//    if (typeof input === "undefined") {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+
+//function alertMVPCustomer(totalPurchase) {
+//    if (totalPurchase > 1000){
+//        alert("We have an MVP customer.");
+//    }
+//}
+
+//BELOW WOULD WORK FOR ASSESSMENT
+
+//function alertMVPCustomer(totalPurchase) {
+//    if (totalPurchase > 1000) {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+
+// OR //
+
+function alertMVPCustomer(totalPurchase) {
+    return totalPurchase > 1000;
 }
+
+// REMEMBER THAT THE FUNCTIONS IN THE ASSESSMENT NEED TO OUTPUT A BOOLEAN!!
