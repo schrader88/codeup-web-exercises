@@ -1,32 +1,84 @@
 "use strict";
 
-var flavor = prompt("Welcome to Codeup Ice Cream! What flavor do you want?")
+//var flavor = prompt("Welcome to Codeup Ice Cream! What flavor do you want?")
 
 // if - if else - else
 
-if (flavor === "chocolate") {
-    alert("One chocolate coming right up!")
-} else if (flavor === "vanilla") {
-    alert("One vanilla coming right up!")
-} else if (flavor === "strawberry") {
-    alert("One strawberry coming right up!")
-} else {
-    alert("We do not have that flavor. Sorry!");
-}
+//if (flavor === "chocolate") {
+//    alert("One chocolate coming right up!")
+//} else if (flavor === "vanilla") {
+//    alert("One vanilla coming right up!")
+//} else if (flavor === "strawberry") {
+//    alert("One strawberry coming right up!")
+//} else {
+//    alert("We do not have that flavor. Sorry!");
+//}
 
 // switch
 
-switch(flavor) {
-    case("chocolate"):
-        alert("One chocolate coming right up!");
-        break;
-    case("vanilla"):
-        alert("One vanilla coming right up!");
-        break;
-    case("strawberry"):
-        alert("One strawberry coming right up!");
-        break;
-    default:
-        alert("We do not have that flavor. Sorry!");
-}
+//switch(flavor) {
+//    case("chocolate"):
+//        alert("One chocolate coming right up!");
+//        break;
+//    case("vanilla"):
+//        alert("One vanilla coming right up!");
+//        break;
+//    case("strawberry"):
+//        alert("One strawberry coming right up!");
+//        break;
+//    default:
+//        alert("We do not have that flavor. Sorry!");
+//}
 
+//function getIceCreamOrder(flavor){
+//    if (flavor === "chocolate" || flavor === "vanilla" || flavor === "strawberry"){
+//        alert("One " + flavor + " coming right up!");
+//    } else {
+//        alert("We do not have that flavor. Sorry!");
+//    }
+//}
+
+//getIceCreamOrder(flavor);
+
+//var decision = confirm("Are you sure you want to close this page?");
+//alert(decision);
+
+//if (decision){
+//    alert("OK, closing the page...");
+//} else {
+//    alert("Yay! Keeping page open...");
+//}
+
+// ternary operator (do not use unless you must)
+
+//alert( (decision === true)? "OK, closing the page..." : "Yay! Keeping the page open...");
+
+//var num = 7;
+
+//if (num % 5 === 0){
+//    alert("That number is divisible by 5!");
+//} else {
+//    alert("That number is not divisible by 5!");
+//}
+
+//function divisibleByFive(num) {
+//    if (num % 5 === 0) {
+//        alert("That number is divisible by 5!");
+//    } else {
+//        alert("That number is not divisible by 5!");
+//    }
+//}
+
+//function divisibleByFive(num){
+//    alert((num % 5 === 0)? "That number is divisible by 5!" : "That number is not divisible by 5!");
+//}
+
+// format used for assessment below. no alerts, no prompts, no confirm - just boolean responses.
+
+function isdivisibleByFive(num) {
+    if (num % 5 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
