@@ -193,11 +193,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 
-//function isNumeric(inputFromPrompt) {
+// function isNumeric(inputFromPrompt) {
 //    return !isNaN(inputFromPrompt);
-//}
+// }
 
-//if (confirm("Would you like to enter a number?")) {
+// if (confirm("Would you like to enter a number?")) {
 //    var userInput = parseFloat(prompt("Enter a number:"));
 //
 //    if (isNumeric(userInput)) {
@@ -217,36 +217,50 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //    } else {
 //        alert("Oops! That input is not a number!");
 //    }
-//}
+// }
 
 // Refactoring below with Functions //
 
-function isNumeric(inputFromPrompt) {
-    return !isNaN(inputFromPrompt);
-}
+//function isNumeric(inputFromPrompt) {
+//    return !isNaN(inputFromPrompt);
+//}
+
+//function isPositiveOrNegative(userNumber) {
+//    if (userNumber > 0) {
+//        return alert("That number is positive.");
+//    } else if (userNumber < 0) {
+//        return alert("That number is negative.");
+//    }
+//}
+
+//function isOddOrEven(userNumber) {
+//    if (userNumber % 2 === 0) {
+//        return alert("That number is even!");
+//    } else if (userNumber % 2 === 1) {
+//        return alert("That number is odd!");
+//    }
+//}
+//
+//function numberPlusHundred(userNumber) {
+//    if (!isNaN(userNumber)) {
+//        alert("Your number added to 100 is: " + (100 + userInput) + ".");
+//    }
+//}
 
 
-
-if (confirm("Would you like to enter a number?")) {
-    var userInput = parseFloat(prompt("Enter a number:"));
-
-    if (isNumeric(userInput)) {
-        if (userInput % 2 === 0) {
-            alert("That number is even!");
-        } else if (userInput % 2 === 1) {
-            alert("That number is odd!");
-        }
-
-        if (userInput > 0) {
-            alert("That number is positive.");
-        } else if (userInput < 0) {
-            alert("That number is negative.");
-        }
-
-        alert("Your number added to 100 is: " + (100 + userInput) + ".");
-    } else {
-        alert("Oops! That input is not a number!");
-    }
-}
+//if (confirm("Would you like to enter a number?")) {
+//    var userInput = parseFloat(prompt("Enter a number:"));
+//
+//    if (isNumeric(userInput)) {
+//        if (isOddOrEven(userInput)) {
+//        }
+//        if (isPositiveOrNegative(userInput)) {
+//        }
+//        if (numberPlusHundred(userInput)) {
+//        }
+//    } else {
+//        alert("Oops! That input is not a number!");
+//    }
+//}
 
 
