@@ -192,3 +192,25 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
 
+
+if (confirm("Would you like to enter a number?")) {
+    var userInput = prompt("Enter a number:");
+
+    if (typeof userInput !== "number") {
+        alert("Oops! That input is not a number!");
+        }
+
+    if (parseFloat(userInput) % 2 === 0) {
+        alert("That number is even!");
+    } else {
+        alert("That number is odd!");
+    }
+
+    if (userInput > 0) {
+        alert("That number is positive.");
+    } else {
+        alert("That number is negative.");
+    }
+
+alert("Your number added to 100 is: " + (100 + parseFloat(userInput)) + ".");
+}
