@@ -7,57 +7,70 @@
 // - Catch any invalid inputs.
 // - Write the logic using if/else ifs and then refactor using a switch case
 
-var dayPrompt = prompt("What is your favorite day of the week?");
-
-function dayOfTheWeek(favDay) {
-    if (favDay.toLowerCase() === "sunday") {
-        alert("Sunday fun-day!");
-    } else if (favDay.toLowerCase() === "monday") {
-        alert("I HATE Monday's! -Garfield");
-    } else if (favDay.toLowerCase() === "tuesday") {
-        alert("Tuesday? Almost hump day!");
-    } else if (favDay.toLowerCase() === "wednesday") {
-        alert("Guess what day it is? HUMP DAY!");
-    } else if (favDay.toLowerCase() === "thursday") {
-        alert("Thirst Thursday!")
-    } else if (favDay.toLowerCase() === "friday") {
-        alert("TGIF!");
-    } else if (favDay.toLowerCase() === "saturday") {
-        alert("Saturday is for the boys!");
-    } else {
-        alert("I'm sorry! That is not a day of the week!");
-    }
-}
-
-dayOfTheWeek(dayPrompt);
+// var dayPrompt = prompt("What is your favorite day of the week?");
+//
+// function dayOfTheWeek(favDay) {
+//     if (favDay.toLowerCase() === "sunday") {
+//         alert("Sunday fun-day!");
+//     } else if (favDay.toLowerCase() === "monday") {
+//         alert("I HATE Monday's! -Garfield");
+//     } else if (favDay.toLowerCase() === "tuesday") {
+//         alert("Tuesday? Almost hump day!");
+//     } else if (favDay.toLowerCase() === "wednesday") {
+//         alert("Guess what day it is? HUMP DAY!");
+//     } else if (favDay.toLowerCase() === "thursday") {
+//         alert("Thirsty Thursday!");
+//     } else if (favDay.toLowerCase() === "friday") {
+//         alert("TGIF!");
+//     } else if (favDay.toLowerCase() === "saturday") {
+//         alert("Saturday is for the boys!");
+//     } else {
+//         alert("I'm sorry! That is not a day of the week!");
+//     }
+// }
+//
+// dayOfTheWeek(dayPrompt);
 
 // Refactor with switch statement //
 
+// var dayPrompt = prompt("What is your favorite day of the week?");
+//
 // function dayOfTheWeek(favDay) {
-//     switch(favDay):
+//     switch (favDay.toLowerCase()) {
 //         case("sunday"):
-//
+//             alert("Sunday fun-day!");
+//             break;
 //         case("monday"):
-//
+//             alert("I HATE Monday's! -Garfield");
+//             break;
 //         case("tuesday"):
-//
+//             alert("Tuesday? Almost hump day!");
+//             break;
 //         case("wednesday"):
-//
+//             alert("Guess what day it is? HUMP DAY!");
+//             break;
 //         case("thursday"):
-//
+//             alert("Thirsty Thursday!");
+//             break;
 //         case("friday"):
-//
+//             alert("TGIF!");
+//             break;
 //         case("saturday"):
-//
+//             alert("Saturday is for the boys!");
 //         default:
-//
+//             alert("I'm sorry! That is not a day of the week!");
+//     }
 // }
+//
+// dayOfTheWeek(dayPrompt);
 
 //     Bonus 2
 // Create a function that prompts the user for an input and then alerts if the input is a number or not a number.
 // - use an if/else
 //     - refactor to use a ternary operator
-//
+
+
+
 // Bonus 3
 // Create a function that prompts a user for a season (Spring, Summer, Fall (or Autumn), Winter). The function then alerts the months available in that season and then asks the user to pick a given month. After selecting the month, alert a unique message for the month.
 // - account for any invalid user input
