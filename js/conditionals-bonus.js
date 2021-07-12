@@ -7,25 +7,31 @@
 // - Catch any invalid inputs.
 // - Write the logic using if/else ifs and then refactor using a switch case
 
+var dayPrompt = prompt("What is your favorite day of the week?");
+
 function dayOfTheWeek(favDay) {
-    if (favDay === "sunday") {
-
-    } else if (favDay === "monday") {
-
-    } else if (favDay === "tuesday") {
-
-    } else if (favDay === "wednesday") {
-
-    } else if (favDay === "thursday") {
-
-    } else if (favDay === "friday") {
-
-    } else if (favDay === "saturday") {
-
+    if (favDay.toLowerCase() === "sunday") {
+        alert("Sunday fun-day!");
+    } else if (favDay.toLowerCase() === "monday") {
+        alert("I HATE Monday's! -Garfield");
+    } else if (favDay.toLowerCase() === "tuesday") {
+        alert("Tuesday? Almost hump day!");
+    } else if (favDay.toLowerCase() === "wednesday") {
+        alert("Guess what day it is? HUMP DAY!");
+    } else if (favDay.toLowerCase() === "thursday") {
+        alert("Thirst Thursday!")
+    } else if (favDay.toLowerCase() === "friday") {
+        alert("TGIF!");
+    } else if (favDay.toLowerCase() === "saturday") {
+        alert("Saturday is for the boys!");
     } else {
-
+        alert("I'm sorry! That is not a day of the week!");
     }
 }
+
+dayOfTheWeek(dayPrompt);
+
+// Refactor with switch statement //
 
 // function dayOfTheWeek(favDay) {
 //     switch(favDay):
