@@ -221,43 +221,43 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 // Refactoring below with Functions //
 
-// function isNumeric(inputFromPrompt) {
-//    return !isNaN(inputFromPrompt);
-// }
-//
-// function isPositiveOrNegative(userNumber) {
-//    if (userNumber > 0) {
-//        return alert("That number is positive.");
-//    } else if (userNumber < 0) {
-//        return alert("That number is negative.");
-//    }
-// }
-//
-// function isOddOrEven(userNumber) {
-//    if (userNumber % 2 === 0) {
-//        return alert("That number is even!");
-//    } else if (userNumber % 2 === 1) {
-//        return alert("That number is odd!");
-//    }
-// }
-//
-// function numberPlusHundred(userNumber) {
-//    if (!isNaN(userNumber)) {
-//        alert("Your number added to 100 is: " + (100 + userInput) + ".");
-//    }
-// }
-//
-//
-// if (confirm("Would you like to enter a number?")) {
-//    var userInput = parseFloat(prompt("Enter a number:"));
-//
-//    if (isNumeric(userInput)) {
-//        (isOddOrEven(userInput));
-//        (isPositiveOrNegative(userInput));
-//        (numberPlusHundred(userInput));
-//    } else {
-//        alert("Oops! That input is not a number!");
-//    }
-// }
+function isNumeric(inputFromPrompt) {
+   return !isNaN(inputFromPrompt);
+}
+
+function isPositiveOrNegative(userNumber) {
+   if (userNumber > 0) {
+       return alert("That number is positive.");
+   } else if (userNumber < 0) {
+       return alert("That number is negative.");
+   }
+}
+
+function isOddOrEven(userNumber) {
+   if (userNumber % 2 === 0) {
+       return alert("That number is even!");
+   } else if (userNumber % 2 === 1) {
+       return alert("That number is odd!");
+   }
+}
+
+function numberPlusHundred(userNumber) {
+   if (!isNaN(userNumber)) {
+       alert("Your number added to 100 is: " + (100 + userInput) + ".");
+   }
+}
+
+
+if (confirm("Would you like to enter a number?")) {
+   var userInput = parseFloat(prompt("Enter a number:"));
+
+   if (isNumeric(userInput)) {
+       (isOddOrEven(userInput));
+       (isPositiveOrNegative(userInput));
+       (numberPlusHundred(userInput));
+   } else {
+       alert("Oops! That input is not a number!");
+   }
+}
 
 
