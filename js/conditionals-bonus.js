@@ -96,8 +96,39 @@
 // - account for any invalid user input
 // - case of input should not matter
 // - accept both abbreviations and full names of the months
-//
-//
+
+
+var askForSeason = prompt("Enter a season here. (Ex: Spring, Summer, Fall/Autumn, Winter): ")
+var seasonMonths = prompt("Please choose one of the months and enter it here:")
+
+function fourSeasons(userSeason) {
+    if (userSeason == "spring") {
+        alert("You chose Spring! The months available in Spring are ");
+    } else if (userSeason == "summer") {
+        alert("You chose Summer! The months available in Summer are ");
+    } else if (userSeason == ("fall" || "autumn")) {
+        alert("You chose Fall/Autumn! The months available in Fall/Autumn are ");
+    } else if (userSeason == "winter") {
+        alert("You chose Winter! The months available in Winter are ");
+    }
+}
+
+fourSeasons(askForSeason);
+
+function monthsInSeasons(userMonth) {
+    if (userMonth == "") {
+        alert("");
+        } else if (userMonth == "") {
+        alert("");
+    } else if (userMonth == ("") {
+        alert("");
+    } else if (userMonth == "") {
+        alert("");
+    }
+}
+
+monthsInSeasons(seasonMonths);
+
 // GOLD STAR BONUS
 //
 // Create a distance unit conversion application.
