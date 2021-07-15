@@ -23,3 +23,24 @@
 //
 // randomNumberGenerator();
 
+// function oneThroughNine() {
+//     for (i = 1; i <= 9; i++){
+//         let str = "";
+//
+//         for (ii = 1; ii < i; ii++) {
+//             str += i;
+//         }
+//         console.log(str += i);
+//     }
+// }
+//
+// oneThroughNine();
+
+// function hundredToFive() {
+//     for (i = 100; i >= 5; i -= 5) {
+//         console.log(i);
+//     }
+// }
+//
+// hundredToFive();
+
