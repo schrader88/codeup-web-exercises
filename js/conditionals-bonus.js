@@ -99,7 +99,6 @@
 
 
 var askForSeason = prompt("Enter a season here. (Ex: Spring, Summer, Fall/Autumn, Winter): ")
-var seasonMonths = prompt("Please choose one of the months and enter it here:")
 
 function fourSeasons(userSeason) {
     if (userSeason == "spring") {
@@ -115,12 +114,14 @@ function fourSeasons(userSeason) {
 
 fourSeasons(askForSeason);
 
+var seasonMonths = prompt("Please choose one of the months and enter it here:")
+
 function monthsInSeasons(userMonth) {
     if (userMonth == "") {
         alert("");
         } else if (userMonth == "") {
         alert("");
-    } else if (userMonth == ("") {
+    } else if (userMonth == ("")) {
         alert("");
     } else if (userMonth == "") {
         alert("");
