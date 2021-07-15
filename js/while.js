@@ -17,11 +17,11 @@ do {
 
     if (purchaseAttempt <= allCones) {
         allCones = (allCones - purchaseAttempt);
+        console.log("You bought " + purchaseAttempt + " cone(s). There are " + allCones + " cone(s) left!");
     } else {
-        console.log("Shoot! We don't have that many cones. We have " + allCones + " cones left.");
+        console.log("Shoot! We don't have " + purchaseAttempt + " cone(s). We have " + allCones + " cone(s) left.");
     }
 
-    console.log("You bought " + purchaseAttempt + " cones. There are " + allCones + " left!");
 } while (allCones > 0);
 
 console.log("Yay! We sold them all!");
