@@ -61,8 +61,18 @@ names.forEach(function (name){
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-function first() {
-
+function first(input) {
+    return input[0];
 }
+
+function second(input) {
+        return input[1];
+}
+
+function last(input) {
+        return input[input.length - 1];
+}
+
+console.log(last(names));
 
 })();
