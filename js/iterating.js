@@ -73,6 +73,8 @@ function last(input) {
         return input[input.length - 1];
 }
 
+console.log(first(names));
+console.log(second(names));
 console.log(last(names));
 
 })();
