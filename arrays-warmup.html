@@ -13,6 +13,24 @@
       TODO: Create a function below, concatFirstAndLast, that takes in an array and returns the first and last inputs
        concatentated together if both elements are strings. If either the first or last element does is not a string
        or if the array contains one or fewer elements, return false.
+   */
+
+  function concatFirstAndLast(input) {
+
+    if ((typeof input[1] !== "string" && typeof input[3] !== "string") || input.length < 2) {
+      return false;
+    } else if (input.length > 1) {
+        return (input[0] + input[input.length - 1]);
+      }
+  }
+
+  console.log(concatFirstAndLast(['a', 'b', 'c'])); // 'ac'
+  console.log(concatFirstAndLast([])); // false
+  console.log(concatFirstAndLast(['23', '12', 'hello'])); // '23hello'
+  console.log(concatFirstAndLast([true])); // false
+  console.log(concatFirstAndLast([true, 'bob'])); // false
+
+    /*
 
       Example input/output...
 
