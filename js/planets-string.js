@@ -28,4 +28,26 @@
 
     console.log(secondPlanetsString);
 
+    // BONUS //
+
+    var arrayToList = secondPlanetsString.split("<br>");
+
+    var liTagsOfPlanets = arrayToList.join(" <li>");
+
+    var secSplit = liTagsOfPlanets.split(" ");
+
+    var joinSecSplit = secSplit.join("</li> ");
+
+    var thirdSplit = joinSecSplit.split(" ");
+
+    thirdSplit.unshift('<ul> <li>');
+
+    thirdSplit.push('</li> </ul>');
+
+    var finalJoin = thirdSplit.join('')
+
+    console.log(finalJoin);
+
+
+
 })();
