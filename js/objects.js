@@ -54,13 +54,23 @@
      * and console.log the relevant messages for each person
      */
 
-
-
     // var shoppers = [
     //     {name: 'Cameron', amount: 180},
     //     {name: 'Ryan', amount: 250},
     //     {name: 'George', amount: 320}
     // ];
+    //
+    // shoppers.forEach(function (shopper){
+    //     console.log("The current shopper is: " + shopper.name);
+    //     console.log("The amount before possible discount is: $" + shopper.amount);
+    //
+    //     if (shopper.amount > 200) {
+    //         console.log(shopper.name + " has spent over $200 and will now recieve a 12% discount." + shopper.name + " will owe $" + (shopper.amount - (shopper.amount *.12)) + ".");
+    //     } else {
+    //         console.log("I'm sorry, you DO NOT qualify for a discount! " + shopper.name + " will owe $" + shopper.amount + ".");
+    //     }
+    //
+    // });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -74,6 +84,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    // var books = [
+    //     {
+    //         title: "In Search of Lost Time",
+    //         author: {
+    //             firstName: "Marcel" ,
+    //             lastName: "Proust",
+    //         }
+    //     } ,
+    //     {
+    //         title: "Ulysses",
+    //         author: {
+    //             firstName: "James",
+    //             lastName: "Joyce",
+    //         }
+    //     } ,
+    //     {
+    //         title: "One Hundred Years of Solitude",
+    //         author: {
+    //             firstName: "Gabriel",
+    //             lastName: "Marquez",
+    //         }
+    //     } ,
+    //     {
+    //         title: "The Great Gatsby",
+    //         author: {
+    //             firstName: "F. Scott",
+    //             lastName: "Fitzgerald",
+    //         }
+    //     } ,
+    //     {
+    //         title: "Love Does",
+    //         author: {
+    //             firstName: "Bob",
+    //             lastName: "Goff",
+    //         }
+    //     }
+    // ];
+
+    // console.log(books[1].title);
+    // console.log(books[1].author.firstName);
+    // console.log(books[1].author.lastName);
 
     /**
      * TODO:
@@ -99,6 +151,51 @@
      *      ---
      *      ...
      */
+
+    // var books = [
+    //     {
+    //         title: "In Search of Lost Time",
+    //         author: {
+    //             firstName: "Marcel" ,
+    //             lastName: "Proust",
+    //         }
+    //     } ,
+    //     {
+    //         title: "Ulysses",
+    //         author: {
+    //             firstName: "James",
+    //             lastName: "Joyce",
+    //         }
+    //     } ,
+    //     {
+    //         title: "One Hundred Years of Solitude",
+    //         author: {
+    //             firstName: "Gabriel",
+    //             lastName: "Marquez",
+    //         }
+    //     } ,
+    //     {
+    //         title: "The Great Gatsby",
+    //         author: {
+    //             firstName: "F. Scott",
+    //             lastName: "Fitzgerald",
+    //         }
+    //     } ,
+    //     {
+    //         title: "Love Does",
+    //         author: {
+    //             firstName: "Bob",
+    //             lastName: "Goff",
+    //         }
+    //     }
+    // ];
+    //
+    // books.forEach(function (book, index){
+    //     console.log("Book # " + index);
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("--");
+    // });
 
     /**
      * Bonus:
