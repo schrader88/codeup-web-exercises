@@ -191,7 +191,7 @@
     // ];
     //
     // books.forEach(function (book, index){
-    //     console.log("Book # " + index);
+    //     console.log("Book # " + (++index));
     //     console.log("Title: " + book.title);
     //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
     //     console.log("--");
@@ -207,5 +207,66 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+//     var books = {
+//         inSearch: {
+//             title: "In Search of Lost Time",
+//             author: {
+//                 firstName: "Marcel",
+//                 lastName: "Proust",
+//             }
+//         },
+//         ulysses: {
+//             title: "Ulysses",
+//             author: {
+//                 firstName: "James",
+//                 lastName: "Joyce",
+//             }
+//         },
+//         oneHundred: {
+//             title: "One Hundred Years of Solitude",
+//             author: {
+//                 firstName: "Gabriel",
+//                 lastName: "Marquez",
+//             }
+//         },
+//         greatGatsby: {
+//             title: "The Great Gatsby",
+//             author: {
+//                 firstName: "F. Scott",
+//                 lastName: "Fitzgerald",
+//             }
+//         },
+//         loveDoes: {
+//             title: "Love Does",
+//             author: {
+//                 firstName: "Bob",
+//                 lastName: "Goff",
+//             }
+//         }
+//     }
+//
+//     var bookController = {
+//         findMyBook: function createBook(bookTitle){
+//             var userBook = bookTitle.title;
+//             var userAuthor = bookTitle.author.firstName + " " + bookTitle.author.lastName;
+//             bookViewer.showUserBookChoice(userBook, userAuthor);
+//         }
+// }
+//
+//     var bookViewer = {
+//         showUserBookChoice: function(userBookTitle, authorFirstAndLast) {
+//             console.log("The book you chose is: " + userBookTitle);
+//             console.log("The author of " + userBookTitle + " is " + authorFirstAndLast + ".");
+//         }
+//     }
+//
+//     bookController.findMyBook(books.inSearch);
+//     bookController.findMyBook(books.oneHundred);
+//     bookController.findMyBook(books.greatGatsby);
+//     bookController.findMyBook(books.loveDoes);
+//     bookController.findMyBook(books.ulysses);
+
+
 
 })();
