@@ -12,6 +12,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    // var person = {
+    //     firstName: "Kyle",
+    //     lastName: "Schrader",
+    // }
+    //
+    // console.log(person.firstName);
+    // console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +29,16 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    // var person = {
+    //     firstName: "Kyle",
+    //     lastName: "Schrader",
+    //     sayHello: (function(){
+    //         console.log("Hello from " + this.firstName + " " + this.lastName)
+    //     }),
+    // }
+    //
+    // person.sayHello();
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -35,6 +53,8 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+
+
 
     // var shoppers = [
     //     {name: 'Cameron', amount: 180},
