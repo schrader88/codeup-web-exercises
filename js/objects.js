@@ -65,11 +65,22 @@
     //     console.log("The amount before possible discount is: $" + shopper.amount);
     //
     //     if (shopper.amount > 200) {
-    //         console.log(shopper.name + " has spent over $200 and will now recieve a 12% discount." + shopper.name + " will owe $" + (shopper.amount - (shopper.amount *.12)) + ".");
+    //         console.log(shopper.name + " has spent over $200 and will now receive a 12% discount." + shopper.name + " will owe $" + (shopper.amount - (shopper.amount *.12)) + ".");
     //     } else {
     //         console.log("I'm sorry, you DO NOT qualify for a discount! " + shopper.name + " will owe $" + shopper.amount + ".");
     //     }
     //
+    // });
+
+    // Justin's Example. (Refactoring for Objects Lecture)
+
+    // shoppers.forEach(function (shopper) {
+    //     var discountedAmount = calculateDiscount(shopper.amount, discountThreshold, discountPercentage);
+    //     var output = shopper.name + ' is purchasing ' + shopper.amount +
+    //         ' of stuff. He will get ' + discountedAmount +
+    //         ' off the purchase and pay ' +
+    //         (shopper.amount - discountedAmount) + '.';
+    //     console.log(output);
     // });
 
     /** TODO:
