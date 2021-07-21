@@ -46,7 +46,7 @@
 
 //-------------------------------------------------------------//
 
-// var input = [
+// var dogInput = [
 //         {
 //             name: "Chompers",
 //             breed: "Pug",
@@ -64,13 +64,36 @@
 //         }
 //     ];
 //
-// input.forEach(function getOlder(enteredArray) {
+// dogInput.forEach(function getOlder(enteredArray) {
 //     ++enteredArray.age;
 //     console.log(enteredArray);
 // });
 
 //-------------------------------------------------------------//
 
+var carInput = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ];
 
+carInput.forEach(function(car){
+
+});
 
 // });
