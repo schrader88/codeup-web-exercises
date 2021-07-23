@@ -18,38 +18,55 @@
   <br>
 
   <p>
+    <span><strong>Please enter a short description of yourself:</strong></span>
+    <br>
   <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter bio here..."></textarea>
   </p>
 
 <!--  <p>-->
-<!--    <label>Billboard:</label>-->
-<!--    <input type="radio" name="reference" value="billboard">-->
+<!--    <span><strong>How did you hear about us?:</strong></span>-->
 <!--    <br>-->
-<!--    <label>Radio Advertisement:</label>-->
-<!--    <input type="radio" name="reference" value="radio ad">-->
+<!--    <label for="billboard">Billboard:</label>-->
+<!--    <input type="radio" name="reference" id="billboard" value="billboard">-->
 <!--    <br>-->
-<!--    <label>Internet Advertisement:</label>-->
-<!--    <input type="radio" name="reference" value="internet ad">-->
+<!--    <label for="radio ad">Radio Advertisement:</label>-->
+<!--    <input type="radio" name="reference" id="radio ad" value="radio ad">-->
 <!--    <br>-->
-<!--    <label>Other:</label>-->
-<!--    <input type="radio" name="reference" value="other">-->
+<!--    <label for="internet ad">Internet Advertisement:</label>-->
+<!--    <input type="radio" name="reference" id="internet ad" value="internet ad">-->
+<!--    <br>-->
+<!--    <label for="other">Other:</label>-->
+<!--    <input type="radio" name="reference" id="other" value="other">-->
 <!--    <br>-->
 <!--  </p>-->
 
   <p>
-    <label>Billboard:</label>
-    <input type="checkbox" name="reference" value="billboard">
+    <span><strong>How did you hear about us?:</strong></span>
     <br>
-    <label>Radio Advertisement:</label>
-    <input type="checkbox" name="reference" value="radio ad">
+    <label for="billboard">Billboard:</label>
+    <input type="checkbox" name="reference" id="billboard" value="billboard">
     <br>
-    <label>Internet Advertisement:</label>
-    <input type="checkbox" name="reference" value="internet ad">
+    <label for="radio ad">Radio Advertisement:</label>
+    <input type="checkbox" name="reference" id="radio ad" value="radio ad">
     <br>
-    <label>Other:</label>
-    <input type="checkbox" name="reference" value="other">
+    <label for="internet ad">Internet Advertisement:</label>
+    <input type="checkbox" name="reference" id="internet ad" value="internet ad">
+    <br>
+    <label for="other">Other:</label>
+    <input type="checkbox" name="reference" id="other" value="other">
     <br>
   </p>
+
+  <p>
+    <strong>What browser are you using?</strong>
+    <select name="browser">
+      <option value="google">Google Chrome</option>
+      <option value="safari">Safari</option>
+      <option value="firefox">Firefox</option>
+    </select>
+  </p>
+
+  <input type="submit"><input type="reset">
 
 </form>
 
