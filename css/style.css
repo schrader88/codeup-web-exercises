@@ -31,6 +31,27 @@ h2 {
     }
 }
 
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.first, .num1 {
+    animation: appear 3s;
+}
+
+.second, .num2 {
+    animation: appear 5s;
+}
+
+.third, .num3 {
+    animation: appear 7s;
+}
+
 ul li {
     list-style-type: georgian;
 }
@@ -62,6 +83,15 @@ tr {
 
 .stock-images:hover {
     height: 500px;
+}
+
+.table-config {
+    animation: appear 12.5s;
+}
+
+.guarantee {
+    animation: slide-left 10s;
+    animation-iteration-count: infinite;
 }
 
 a:hover {
