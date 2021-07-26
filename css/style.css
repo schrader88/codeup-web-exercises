@@ -1,3 +1,12 @@
+html {
+    font-family: "Times New Roman", sans-serif;
+}
+
+.background {
+    /*background-image: url(https://images.pexels.com/photos/2061212/pexels-photo-2061212.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);*/
+    background: linear-gradient(to top, mediumpurple, lightseagreen);
+}
+
 .fancy-header {
     color: purple;
     text-decoration: underline;
@@ -9,10 +18,17 @@ h2 {
     text-decoration: underline;
 }
 
-html {
-    background: bisque;
-    background-image: url(https://images.pexels.com/photos/2061212/pexels-photo-2061212.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
-    font-family: fantasy;
+.slippery {
+    animation: slide-left 700ms;
+}
+
+@keyframes slide-left {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0%;
+    }
 }
 
 ul li {
@@ -39,12 +55,22 @@ tr {
     font-size: small;
 }
 
+.stock-images {
+    transition: ease-out 4s;
+
+}
+
+.stock-images:hover {
+    height: 500px;
+}
+
 a:hover {
+    transition: ease-in;
     color: yellow;
 }
 
 a:visited {
-    color: black;
+    color: purple;
 }
 
 a:active {
