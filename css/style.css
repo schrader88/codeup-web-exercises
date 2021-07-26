@@ -1,4 +1,52 @@
 .fancy-header {
     color: purple;
     text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: aqua;
+    text-decoration: underline;
+}
+
+html {
+    background: bisque;
+    background-image: url(https://images.pexels.com/photos/2061212/pexels-photo-2061212.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    font-family: fantasy;
+}
+
+ul li {
+    list-style-type: georgian;
+}
+
+ol li {
+    list-style-type: upper-alpha;
+}
+
+table {
+    padding: 1px;
+    font-size: medium;
+    color: white;
+}
+
+td {
+    padding: 1.5px;
+    font-size: small;
+}
+
+tr {
+    padding: 1.5px;
+    font-size: small;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: green;
 }
