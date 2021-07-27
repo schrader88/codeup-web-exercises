@@ -8,7 +8,7 @@ body, html {
 
 .message {
     width: 100%;
-    border: 1px solid darkgrey;
+    border: 1px solid grey;
     margin: 8px;
     padding: 8px;
     border-radius: 5px;
@@ -26,10 +26,10 @@ body, html {
 
 .message-warning {
     background-color: #eeeebb;
-    color: yellow;
+    color: #a89b58;
 }
 
 .message-error {
     background-color: #ef89a7;
-    color: red;
+    color: #944b5a;
 }
