@@ -3,10 +3,10 @@
     --bg-success: darkseagreen;
     --bg-warning: #eeeebb;
     --bg-error: #ef89a7;
-    --text-info: blue;
-    --text-success: green;
+    --text-info: #4a4a9c;
+    --text-success: #3f774c;
     --text-warning: #a89b58;
-    --text-error: #944b5a;
+    --text-error: #823140;
 }
 
 body, html {
