@@ -17,12 +17,16 @@
 //         lastName: '...',
 // }
 // Regardless of the case of the first name and last name input, the output should be in all lower case.
-// var fred = {
-//     firstName: 'Fred',
-//     lastName: 'Smith',
-//     email: 'fred@email.com',
-//     username: 'fred123',
-//     password: 'pass123'
-// }
-// getSimpleUser(fred) // {firstName: 'fred', lastName: 'smith'}
+var fred = {
+    firstName: 'Fred',
+    lastName: 'Smith',
+    email: 'fred@email.com',
+    username: 'fred123',
+    password: 'pass123'
+}
 
+function getSimpleUser(object) {
+    return {firstName: object.firstName.toLowerCase(), lastName: object.lastName.toLowerCase()};
+}
+
+console.log(getSimpleUser(fred)); // {firstName: 'fred', lastName: 'smith'}
