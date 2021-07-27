@@ -1,3 +1,14 @@
+:root {
+    --bg-info: cornflowerblue;
+    --bg-success: darkseagreen;
+    --bg-warning: #eeeebb;
+    --bg-error: #ef89a7;
+    --text-info: blue;
+    --text-success: green;
+    --text-warning: #a89b58;
+    --text-error: #944b5a;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -15,21 +26,21 @@ body, html {
 }
 
 .message-info {
-    background-color: cornflowerblue;
-    color: blue;
+    background-color: var(--bg-info);
+    color: var(--text-info);
 }
 
 .message-success {
-    background-color: darkseagreen;
-    color: green;
+    background-color: var(--bg-success);
+    color: var(--text-success);
 }
 
 .message-warning {
-    background-color: #eeeebb;
-    color: #a89b58;
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
 }
 
 .message-error {
-    background-color: #ef89a7;
-    color: #944b5a;
+    background-color: var(--bg-error);
+    color: var(--text-error);
 }
