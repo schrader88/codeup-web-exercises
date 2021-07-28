@@ -1,0 +1,63 @@
+body {
+    box-sizing: border-box;
+}
+
+.flexbox, .flex-item {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*USE OF THE flex-flow SHORTHAND PROPERTY FOR DIRECTION AND WRAP IS ENCOURAGED (below)*/
+    /*flex-flow: row wrap;*/
+    /*justify-content CONTROLS HOW FLEX ITEMS IN A FLEX LINE ARE DISTRIBUTED ALONG THE MAIN AXIS*/
+    /*justify-content: space-evenly;*/
+    /*justify-content: space-around;*/
+    /*justify-content: space-between;*/
+    /*justify-content: flex-start;*/
+    /*justify-content: flex-end;*/
+    /*align-items CONTROLS HOW FLEX LINES ARE DISTRIBUTED ALONG THE CONTAINER cross-axis*/
+    align-items: flex-start;
+    /*align-items: flex-end;*/
+    /*align-items: center;*/
+    /*align-items: baseline;*/
+    /*alight-content CONTROLS HOW EXTRA cross-axis SPACE IS DISTRIBUTED BETWEEN AND AROUND FLEX LINES. APPLIES ONLY TO multi-line CONTAINERS. HAS NO EFFECT ON nowrap OR single-line CONTAINERS*/
+    /*align-content: space-around;*/
+    /*height: 900px;*/
+}
+
+/*flex-grow*/
+/*DEFINE IF A FLEX ITEM CAN GROW WHEN THERE IS AVAILABLE SPACE, AND HOW MUCH IT GROWS PROPORTIONALLY TO IT'S SIBLINGS*/
+/*.five {*/
+/*    flex-grow: 0.5;*/
+/*}*/
+/*.four {*/
+/*    flex-grow: 1;*/
+/*}*/
+/*.three {*/
+/*    flex-grow: 2;*/
+/*}*/
+/*THERE IS ALSO: flex-shrink AND flex-basis*/
+
+/*align-self OVERRIDES align-items ON A PER-FLEX-ITEM BASIS*/
+
+/*.one {align-self: flex-end;}*/
+/*.two {align-self: center;}*/
+/*.four {align-self: center;}*/
+
+/*order CAN ALTER THE ORDER OF ITEMS ON A CASE-BY-CASE BASIS. BY DEFAULT HAS ORDER 0.*/
+
+.one {order: 1;}
+.five {order: -1;}
+
+/*.large-font {*/
+/*    font-size: 150%;*/
+/*}*/
+
+/*.bigger-margin {*/
+/*    margin-top: 30px;*/
+/*}*/
