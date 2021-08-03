@@ -48,20 +48,23 @@
 
   <p>Build your own pizza!</p>
 
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#"> <span class="badge badge-dark">1</span> Size and crust</a>
+  <ul class="nav nav-tabs" id="buildPizza" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="size-and-crust-tab" data-toggle="tab" role="tab" aria-controls="size-and-crust" aria-selected="true"> <span class="badge badge-dark">1</span> Size and crust</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><span class="badge badge-dark">2</span> Cheese and Sauce</a>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="cheese-and-sauce-tab" aria-controls="cheese-and-sauce" data-toggle="tab" role="tab" aria-selected="false"><span class="badge badge-dark">2</span> Cheese and Sauce</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><span class="badge badge-dark">3</span> Toppings</a>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="toppings-tab" data-toggle="tab" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-dark">3</span> Toppings</a>
     </li>
   </ul>
 
   <br>
 
+  <div class="tab-content" id="pizzaChoices">
+
+  <div class="tab-pane fade show active" id="size-and-crust" role="tabpanel" aria-labelledby="size-and-crust-tab">
   <div class="card">
     <div class="card-header bg-primary">
       Choose size and crust
@@ -99,9 +102,11 @@
       </div>
     </div>
   </div>
+  </div>
 
   <br>
 
+  <div class="tab-pane fade show active" id="cheese-and-sauce" role="tabpanel" aria-labelledby="cheese-and-sauce-tab">
   <div class="card">
     <div class="card-header bg-primary">
       Choose Cheese and Sauce
@@ -161,9 +166,11 @@
       <a href="#" class="btn btn-primary">Next Step</a>
   </div>
   </div>
+  </div>
 
   <br>
 
+  <div class="tab-pane fade show active" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
   <div class="card">
     <div class="card-header bg-primary">
       Choose Toppings
@@ -197,6 +204,8 @@
     <div class="card-footer text-right">
       <a href="#" class="btn btn-primary">Previous Step</a>
       <a href="#" class="btn btn-primary">Next Step</a>
+  </div>
+  </div>
   </div>
   </div>
 
