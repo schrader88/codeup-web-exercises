@@ -38,9 +38,9 @@ function getLowestNumber(numbersArr) {
     return Math.min(...numbersArr);
 }
 
-// getLowestNumber([23,47,50,5]);
-// getLowestNumber([5.8,7.3,8.2,4.7, 4.3]);
-// getLowestNumber([-7,9,76,0,-4]);
+console.log(getLowestNumber([23,47,50,5]));
+console.log(getLowestNumber([5.8,7.3,8.2,4.7, 4.3]));
+console.log(getLowestNumber([-7,9,76,0,-4]));
 
 // 1. Create a function, `getOccurrences`, that that takes in two arguments, a string and a letter. The function will count the number of occurrences of the specified letter within the string and return that number. The function should recognize case for instances (e.g. 'M' does not equal 'm').
 //
@@ -51,7 +51,9 @@ function getLowestNumber(numbersArr) {
 // 	```
 //
 
+function getOccurrences(userStr, userLet) {
 
+}
 
 // 1. Create a function, `getLongestString`, that takes in an array of strings and returns the longest string. If the two longest words are equal in length, return the last to appear in the array.
 //
