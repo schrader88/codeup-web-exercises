@@ -17,7 +17,13 @@
 // 	```
 //
 
-console.log("YO");
+function printAll(userArr) {
+    userArr.forEach(function(array) {
+        console.log(array);
+    });
+}
+
+printAll(['hello', 'hi', 'greetings']);
 
 // 1. Create a function, `getLowestNumber`, that take in an array of numbers and returns the lowest number.
 //
@@ -28,7 +34,13 @@ console.log("YO");
 // 	```
 //
 
+function getLowestNumber(numbersArr) {
+    return Math.min(numbersArr);
+}
 
+// getLowestNumber([23,47,50,5]);
+// getLowestNumber([5.8,7.3,8.2,4.7, 4.3]);
+// getLowestNumber([-7,9,76,0,-4]);
 
 // 1. Create a function, `getOccurrences`, that that takes in two arguments, a string and a letter. The function will count the number of occurrences of the specified letter within the string and return that number. The function should recognize case for instances (e.g. 'M' does not equal 'm').
 //
