@@ -15,7 +15,7 @@
 
     var detonationTimer = 5;
 
-    var detonationDefuser = setInterval(updateTimer, 1000);
+    var detonationDiffuser = setInterval(updateTimer, 1000);
 
     // TODO: This function needs to be called once every second
     function updateTimer() {
@@ -32,7 +32,7 @@
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-        clearInterval(detonationDefuser);
+        clearInterval(detonationDiffuser);
     }
 
     // Don't modify anything below this line!
