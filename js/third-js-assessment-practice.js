@@ -35,7 +35,7 @@ printAll(['hello', 'hi', 'greetings']);
 //
 
 function getLowestNumber(numbersArr) {
-    return Math.min(numbersArr);
+    return Math.min(...numbersArr);
 }
 
 // getLowestNumber([23,47,50,5]);
