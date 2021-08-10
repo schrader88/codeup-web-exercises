@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Events Lecture</title>
+  <style>
+    p {
+      font-size: .5em;
+    }
+    li {
+      background-color: papayawhip;
+    }
+  </style>
+</head>
+<body>
+<h1>DOM Events Test Page</h1>
+
+<button id="clicky-click">Click Me!!!</button>
+
+<ul>
+  <li>Item one</li>
+  <hr>
+  <li>Item two</li>
+  <hr>
+  <li>Item three</li>
+  <hr>
+  <li>Item four</li>
+  <hr>
+  <li>Item five</li>
+  <hr>
+  <li>Item six</li>
+  <hr>
+  <li>Item seven</li>
+  <hr>
+  <li>Item eight</li>
+  <hr>
+  <li>Item nine</li>
+  <hr>
+  <li>Item ten</li>
+  <hr>
+</ul>
+
+<br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad commodi eos eum exercitationem, fugit id incidunt laborum magni molestiae nemo non optio praesentium totam unde vel veritatis voluptas voluptatum? Blanditiis corporis culpa cupiditate deserunt dicta, ducimus fugit illo incidunt ipsam ipsum necessitatibus nostrum obcaecati omnis perferendis quasi quo sunt vitae. Illo, modi, quia. Adipisci consectetur cum dolor doloribus ducimus ea error, fugit in incidunt inventore iste laborum maiores maxime molestias non placeat quo sapiente soluta sunt temporibus totam ullam veniam voluptatem? Aliquid autem commodi dolor dolores doloribus eveniet in iure molestias nulla odit pariatur perferendis, porro soluta, sunt voluptatem! Cumque?</p>
+
+
+<script>
+
+  "use strict";
+
+  var listBtns = document.getElementsByTagName("li");
+
+  // or e.target
+  function changeToRedColor(e) {
+    // this or e.target
+    this.style['background-color'] = 'red';
+    // e.target.style['background-color'] = 'red';
+  }
+
+  for (var i = 0; i < listBtns.length; i++) {
+    // listBtns[i].addEventListener("click", changeToRedColor);
+    listBtns[i].addEventListener("click", changeToRedColor);
+  }
+
+
+
+  document.addEventListener("click", function(e) {
+
+     var red = e.screenX % 256;
+     var green = e.screenY % 256;
+     var blue = "ff";
+
+     console.log(e.screenX);
+     console.log(e.screenY);
+
+     red = red.toString(16);
+     green = green.toString(16);
+     blue = blue.toString(16);
+     document.body.style['background-color'] = "#" + red + green + blue;
+
+  });
+
+
+
+  var paragraphStyle = document.getElementsByTagName("p")[0];
+
+  console.log(paragraphStyle);
+
+  paragraphStyle.addEventListener("click", function() {
+    document.getElementsByTagName("p")[0].style.backgroundColor = "yellow";
+  });
+
+
+</script>
+
+</body>
+</html>
