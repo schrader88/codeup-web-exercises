@@ -52,8 +52,14 @@ console.log(getLowestNumber([-7,9,76,0,-4]));
 //
 
 function getOccurrences(userStr, userLet) {
-
+    for (var i = 0; i < userStr.length; i++) {
+        if (userStr.charAt(i) === userLet) {
+        }
+    }
+    return userStr.indexOf();
 }
+
+console.log(getOccurrences('Bubble', 'B'));
 
 // 1. Create a function, `getLongestString`, that takes in an array of strings and returns the longest string. If the two longest words are equal in length, return the last to appear in the array.
 //
