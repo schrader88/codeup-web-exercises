@@ -43,13 +43,31 @@
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
 
+
+        //Two separate lines:
+
         // TODO: Set text color on every other list item to grey
-        for (var i = 0; i < listItems.length; i += 2){
-            listItems[i].style.color = "grey";
-        }
+        // for (var i = 0; i < listItems.length; i += 2){
+        //     listItems[i].style.color = "grey";
+        // }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue";
+        // listItems[0].style.color = "blue";
+
+        //In one for loop:
+
+        // TODO: Set text color on every other list item to grey
+        // TODO: Set text color of li with dbid = 1 to blue
+        for (var i = 0; i < listItems.length; i++){
+            var dbid = listItems[i].getAttribute("data-dbid")
+            if (dbid === "1") {
+                listItems[i].style.color = "blue";
+            } else if (i % 2 === 0) {
+                listItems[i].style.color = "grey";
+            }
+        }
+
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.querySelector(".sub-paragraph");
