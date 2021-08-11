@@ -201,7 +201,6 @@ function objectToSum(obj) {
 }
 
 
-
 // 1. Create a function, `objToObj`, that takes in an object with only property values of a string type and returns another object with a single property called 'all' with a value of all input object properties values concatenated together.
 //
 // ***Please note that the order of object properties is uncertain and concatenating the object property values will be unpredictable. This is fine.***
@@ -212,6 +211,34 @@ function objectToSum(obj) {
 // 	```
 //
 
+// Ex:
+//
+//     const object = { a: 1, b: 2, c: 3 };
+//
+// for (const property in object) {
+//     console.log(`${property}: ${object[property]}`);
+// }
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+
+// {property_1: 'value_n'}
+
+
+// function objToObj(userObj) {
+//     var newObj = Object.values(userObj);
+//     var concatWords = "";
+//     console.log(newObj);
+//     newObj.forEach(function (obj){
+//         concatWords += obj;
+//     });
+//     return {all: concatWords}
+// }
+//
+// console.log(objToObj({foo: 'hello', bar: 'world'}));
+// console.log(objToObj({a: 'codeup', b: 'rocks'}));
 
 
 // 1. Create a function, `getStringDeets`, that takes in a string and returns an object with specific properties containing information about the string, namely:
@@ -234,7 +261,16 @@ function objectToSum(obj) {
 // 	```
 //
 
-
+// function getStringDeets(userStr) {
+//     return {
+//         firstChar: userStr.charAt(0),
+//         lastChar: userStr.charAt(userStr.length - 1),
+//         length: userStr.length,
+//         shoutedVersion: userStr.toUpperCase()
+//     }
+// }
+//
+// console.log(getStringDeets("apple"));
 
 // 1. Create a function, `createUsersObject`, that takes in two arrays: the first array is an array of strings (usernames), the second is an array of numbers (user ages). The function should return an object with property names matching to the first array elements paired with property values matching the second  array elements. Assume both arrays are the same length.
 //
@@ -243,3 +279,11 @@ function objectToSum(obj) {
 // 	var ages = [34, 22, 45];
 // 	createUsersObject(usernames, ages) // returns {cindy: 34, fred: 22, cathy: 45}
 // 	```
+
+// function createUsersObject(userNames, userAges) {
+//     var object = {}
+//     userNames.forEach(function(name, index) {
+//         object[name] = userAges[index];
+//     });
+//     return object;
+// }
