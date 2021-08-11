@@ -17,13 +17,13 @@
 // 	```
 //
 
-function printAll(userArr) {
-    userArr.forEach(function(array) {
-        console.log(array);
-    });
-}
-
-printAll(['hello', 'hi', 'greetings']);
+// function printAll(userArr) {
+//     userArr.forEach(function(array) {
+//         console.log(array);
+//     });
+// }
+//
+// printAll(['hello', 'hi', 'greetings']);
 
 // 1. Create a function, `getLowestNumber`, that take in an array of numbers and returns the lowest number.
 //
@@ -34,13 +34,13 @@ printAll(['hello', 'hi', 'greetings']);
 // 	```
 //
 
-function getLowestNumber(numbersArr) {
-    return Math.min(...numbersArr);
-}
-
-console.log(getLowestNumber([23,47,50,5]));
-console.log(getLowestNumber([5.8,7.3,8.2,4.7, 4.3]));
-console.log(getLowestNumber([-7,9,76,0,-4]));
+// function getLowestNumber(numbersArr) {
+//     return Math.min(...numbersArr);
+// }
+//
+// console.log(getLowestNumber([23,47,50,5]));
+// console.log(getLowestNumber([5.8,7.3,8.2,4.7, 4.3]));
+// console.log(getLowestNumber([-7,9,76,0,-4]));
 
 // 1. Create a function, `getOccurrences`, that that takes in two arguments, a string and a letter. The function will count the number of occurrences of the specified letter within the string and return that number. The function should recognize case for instances (e.g. 'M' does not equal 'm').
 //
@@ -50,16 +50,19 @@ console.log(getLowestNumber([-7,9,76,0,-4]));
 // 	getOccurrences('Bubble', 'B'); // returns 1
 // 	```
 //
-
-function getOccurrences(userStr, userLet) {
-    for (var i = 0; i < userStr.length; i++) {
-        if (userStr.charAt(i) === userLet) {
-        }
-    }
-    return userStr.indexOf();
-}
-
-console.log(getOccurrences('Bubble', 'B'));
+// function getOccurrences(userStr, userLet) {
+//     var numberOfOccurrences = 0;
+//     for (var i = 0; i < userStr.length; i++) {
+//         if (userStr.charAt(i) === userLet) {
+//             numberOfOccurrences++;
+//         }
+//     }
+//     return numberOfOccurrences;
+// }
+//
+// console.log(getOccurrences('mississippi', 's'));
+// console.log(getOccurrences('hello', 'l'));
+// console.log(getOccurrences('Bubble', 'B'));
 
 // 1. Create a function, `getLongestString`, that takes in an array of strings and returns the longest string. If the two longest words are equal in length, return the last to appear in the array.
 //
@@ -69,7 +72,19 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	```
 //
 
+// Refactor this:
 
+// function getLongestString(userArr) {
+//     var longest = userArr.reduce(
+//         function (a, b) {
+//             return a.length > b.length ? a : b;
+//         }
+//     );
+//     return longest;
+// }
+
+// console.log(getLongestString(['hello', 'hi', 'greetings']));
+// console.log(getLongestString(['hello', 'world', '!']));
 
 // 1. Create a function, `getFirstLetter`, that takes an array of strings and returns an array of the first letter of each string.
 //
@@ -79,7 +94,16 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	```
 //
 
-
+// function getFirstLetter(userArr) {
+//     var newArray = [];
+//     userArr.forEach(function (arr){
+//         newArray.push(arr.charAt(0));
+//     });
+//     return newArray;
+// }
+//
+// console.log(getFirstLetter(['hello', 'hi', 'greetings']));
+// console.log(getFirstLetter(['hello', 'world', '!']));
 
 // 1. Create a function, `arrayEndsWith`, that takes two arguments, an array and a shorter array, and returns a boolean whether or not the larger array ends with the same elements as the passed second array elements. The function should return true if the second array elements are at the end of the first array. Assume that neither array will be empty, contain only string, number, or boolean elements and that the length of the second array will always be shorter than the first.
 //
@@ -92,7 +116,34 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	```
 //
 
+//Attempting to figure out .includes below:
 
+// function arrayEndsWith(userArr, shortUserArr) {
+//     if (userArr.includes(shortUserArr)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function arrayEndsWith(arr1, arr2) {
+//     var stop = arr1.length - arr2.length;
+//     var logIndex = arr2.length - 1;
+//     for (var i = arr1.length - 1; i >= stop; i--) {
+//         if (arr1[i] !== arr2[logIndex]) {
+//             return false;
+//         } else {
+//             logIndex--;
+//         }
+//     }
+//     return true;
+// }
+//
+// console.log(arrayEndsWith(['hi', 'hello', 'world', true, 3, 5], [3, 5]));
+// console.log(arrayEndsWith(['hi', 'hello', 'world', true, 3, 5], [3, 9]));
+// console.log(arrayEndsWith(['hi', 'hmmm'], ['hmmm']));
+// console.log(arrayEndsWith([1, 2, 3], [2, 3]));
+// console.log(arrayEndsWith([1, 2, 3], [3, 2]));
 
 // 1. Create a function, `numsToObject`, that takes in three number inputs and returns them as property values `num1`, `num2`, and `num3` on an object.
 //
@@ -103,7 +154,17 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	```
 //
 
-
+// function numsToObject(num1, num2, num3) {
+//     return {
+//         num1: num1,
+//         num2: num2,
+//         num3: num3
+//     }
+// }
+//
+// console.log(numsToObject(4, 5, 6));
+// console.log(numsToObject(1, 2, 3));
+// console.log(numsToObject(0, 199, 34));
 
 // 1. Create a function, `removeNums`, that takes in an array of data types and returns an array of the same elements except for any number data types. Numeric strings do not count as a number but NaN does.
 //
@@ -113,7 +174,18 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	```
 //
 
-
+// function removeNums(userArr) {
+//     var arrOfNums = [];
+//     userArr.forEach(function (arr){
+//         if (typeof arr !== "number") {
+//             arrOfNums.push(arr);
+//         }
+//     });
+//     return arrOfNums;
+// }
+//
+// console.log(removeNums(['a', true, null, [], {}, 4, '5', NaN]));
+// console.log(removeNums(['a', 'b', 'c']));
 
 // 1. Create a function, `objectToSum`, that takes in an object, and returns the sum of any number property values (numeric strings will not be added). Expect that no object property values will be NaN. If no number properties are present, return 0.
 //
@@ -123,6 +195,10 @@ console.log(getOccurrences('Bubble', 'B'));
 // 	objectToSum({foo: 'one', bar: 'two'}) // returns 0
 // 	```
 //
+
+function objectToSum(obj) {
+
+}
 
 
 
