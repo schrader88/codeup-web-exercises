@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // Create a function called processNumber
+    // Takes one parameter that should be numeric - should handle both a number and a numeric string
+    // Starting from the original number, double the value of every other digit
+    // Then add the values of the individual digits together
+    // If the doubled value now has two digits, add the digits individually
+    // Return the resulting number
+    // If passed the number 176248, it should return 27
+    // If passed the number 1762483, it should return 30
+
+    // var number = 176248;
+    // var numbersArray = number.toString().split("");
+    //
+    // var total = 0;
+    // numbersArray.forEach(function (number, index){
+    //   if (index % 2 === 0) {
+    //       total += parseFloat(number);
+    //   }
+    // });
+    // console.log(total);
+
+    // var number = 176248;
+    // var number = 1762483;
+    // var numbersArray = number.toString().split("");
+    //
+    // var total = 0;
+    // numbersArray.forEach(function (number, index){
+    //   if (index % 2 !== 0) {
+    //       if ((parseFloat(number) * 2) < 10){
+    //           total += parseFloat(number) * 2;
+    //       } else {
+    //           var numberArray = (number * 2).toString().split("");
+    //           // console.log(numberArray);
+    //           var numberToAddToTotal = parseFloat(numberArray[0]) + parseFloat(numberArray[1]);
+    //           total += numberToAddToTotal;
+    //       }
+    //   } else {
+    //       total += parseFloat(number);
+    //   }
+    // });
+    // console.log(total);
+
+    function processNumber(number) {
+        var numbersArray = number.toString().split("");
+
+        var total = 0;
+        numbersArray.forEach(function (number, index){
+            if (index % 2 !== 0) {
+                if ((parseFloat(number) * 2) < 10){
+                    total += parseFloat(number) * 2;
+                } else {
+                    var numberArray = (number * 2).toString().split("");
+                    // console.log(numberArray);
+                    var numberToAddToTotal = parseFloat(numberArray[0]) + parseFloat(numberArray[1]);
+                    total += numberToAddToTotal;
+                }
+            } else {
+                total += parseFloat(number);
+            }
+        });
+        return total;
+    }
+
+
+
+</script>
+
+</body>
+</html>
