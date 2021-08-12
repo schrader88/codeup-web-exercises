@@ -118,12 +118,14 @@
 
 //Attempting to figure out .includes below:
 
-// function arrayEndsWith(userArr, shortUserArr) {
-//     if (userArr.includes(shortUserArr)) {
-//         return true;
-//     } else {
-//         return false;
+// function arrayEndsWith(long, short) {
+//     let commonLetters = 0;
+//     for (let i=0; i<short.length; i++) {
+//         if (long[(long.length-short.length)+i]===short[i]) {
+//             commonLetters++;
+//         }
 //     }
+//     return commonLetters===short.length;
 // }
 
 // function arrayEndsWith(arr1, arr2) {
@@ -196,9 +198,22 @@
 // 	```
 //
 
-function objectToSum(obj) {
-
-}
+// function objectToSum(obj) {
+//     var objArr = Object.values(obj);
+//     var newArr = 0;
+//     objArr.forEach(function (arr){
+//         if (typeof arr !== "number") {
+//             newArr += 0;
+//         } else {
+//             newArr += arr;
+//         }
+//     });
+//     return newArr;
+// }
+//
+// console.log(objectToSum({prop1: 'bob', prop2: true, prop3: 5})); // returns 5
+// console.log(objectToSum({a: '3', b: true, c: 5, d: 3})); // returns 8
+// console.log(objectToSum({foo: 'one', bar: 'two'})); // returns 0
 
 
 // 1. Create a function, `objToObj`, that takes in an object with only property values of a string type and returns another object with a single property called 'all' with a value of all input object properties values concatenated together.
