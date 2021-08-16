@@ -121,39 +121,39 @@
 
   // Write a function, returnFive, that returns the number five. No inputs should be defined.
 
-  function returnFive() {
-    return 5;
-  }
+  // function returnFive() {
+  //   return 5;
+  // }
 
   //console.log(returnFive());
 
   // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
 
   //var input = prompt("Enter the number 5.");
-  function isFive(input) {
-    if (input == 5 || input == "5") {
-      //alert("5 is correct!");
-      return true;
-    } else {
-      //alert(input + " is incorrect.");
-      return false;
-    }
-  }
+  // function isFive(input) {
+  //   if (input == 5 || input == "5") {
+  //     //alert("5 is correct!");
+  //     return true;
+  //   } else {
+  //     //alert(input + " is incorrect.");
+  //     return false;
+  //   }
+  // }
 
   //console.log(isFive(input));
 
   // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
 
   //var word = prompt("Enter a word that is less than 5 characters.");
-  function isShortWord(word) {
-    if (word.length <= 4) {
-      //alert("Nice! That word is less than 5 characters!");
-      return true;
-    } else {
-      //alert("Shoot! That word is too long!");
-      return false;
-    }
-  }
+  // function isShortWord(word) {
+  //   if (word.length <= 4) {
+  //     //alert("Nice! That word is less than 5 characters!");
+  //     return true;
+  //   } else {
+  //     //alert("Shoot! That word is too long!");
+  //     return false;
+  //   }
+  // }
 
   //console.log(isShortWord(word));
 
@@ -161,15 +161,15 @@
 
   //var input1 = prompt("Enter a word here.");
   //var input2 = prompt("Enter a 2nd word here. Make it the same length as the first word!");
-  function isSameLength(input1, input2) {
-    if (input1.length == input2.length) {
-      //alert("Great job! Those are the same length!");
-      return true;
-    } else {
-      //alert("Oh darn! Those words aren't the same length.");
-      return false;
-    }
-  }
+  // function isSameLength(input1, input2) {
+  //   if (input1.length == input2.length) {
+  //     //alert("Great job! Those are the same length!");
+  //     return true;
+  //   } else {
+  //     //alert("Oh darn! Those words aren't the same length.");
+  //     return false;
+  //   }
+  // }
 
   //console.log(isSameLength(input1, input2));
 
@@ -177,12 +177,12 @@
 
   //var string1 = prompt("Enter a word here.")
   //var number1 = prompt("Enter a number here.")
-  function getSmallerSegment(string1, number1) {
-    var output = string1.substring(0, parseFloat(number1))
-    return output.toLowerCase();
-
-    //return alert("This is your new word is: " + string1.substring(0, number1));
-  }
+  // function getSmallerSegment(string1, number1) {
+  //   var output = string1.substring(0, parseFloat(number1))
+  //   return output.toLowerCase();
+  //
+  //   //return alert("This is your new word is: " + string1.substring(0, number1));
+  // }
 
   //getSmallerSegment(string1, number1);
 
@@ -213,10 +213,10 @@
 
   //var numberOne = prompt("Please enter the first number.")
   //var numberTwo = prompt("Please enter the second number.")
-  function twoNumbersAdded(numberOne, numberTwo) {
-    var totalSum = (parseFloat(numberOne) + parseFloat(numberTwo));
-    return console.log("The result of the two numbers added together is: " + totalSum)
-  }
+  // function twoNumbersAdded(numberOne, numberTwo) {
+  //   var totalSum = (parseFloat(numberOne) + parseFloat(numberTwo));
+  //   return console.log("The result of the two numbers added together is: " + totalSum)
+  // }
 
   //twoNumbersAdded(numberOne, numberTwo);
 
@@ -308,6 +308,18 @@
   // ================ IIFE
 
   // See additional example
+
+  var isColdOutside = true;
+
+  var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+
+  // if (isColdOutside) {
+  //   clothingToWear = 'sweater and a jacket';
+  // } else {
+  //   clothingToWear = 'shorts and a t-shirt';
+  // }
+
+  console.log(clothingToWear);
 
 </script>
 </body>
