@@ -43,6 +43,21 @@
         // $("h1, p, li").css("background-color", "#FFFF00");
 
         // alert($("h1").html());
+
+        $("#header-id").click(function (){
+           $(this).css("background-color", "purple");
+        });
+
+        $("p").dblclick(function (){
+            $(this).css("font-size", "18px");
+        })
+
+        $(".li-class").hover(function (){
+            $(this).css("color", "red");
+        },
+        function (){
+            $(this).css("color", "black");
+        })
     });
 </script>
 </body>
