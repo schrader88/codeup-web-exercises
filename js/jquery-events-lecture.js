@@ -61,16 +61,17 @@ $(document).ready(function () {
 
     // $(".does-it-work").click(function (){
     //     alert("YOU WISH THIS WOULD WORK, NERD!")
-    // })
+    // });
 
     // Both blocks of code below do the same thing. Creating functional dynamic buttons:
 
     // $(document).on("click", ".does-it-work", function (){
     //     alert("Now I can add an event listener to a dynamically created element.");
-    // })
+    // });
 
     $("#dynamic").on("click", ".does-it-work", function (){
         alert("Now I can add an event listener to a dynamically created element.");
-    })
+    });
+
 
 });
