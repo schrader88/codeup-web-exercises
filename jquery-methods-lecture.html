@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Methods</title>
+    <style>
+        .highlight {
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+<h1>Essential jQuery Methods</h1>
+<h2 id="leader">I am the leader</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid consequatur, cupiditate deserunt doloribus dolorum ea earum facere, illo ipsum itaque molestiae nam natus, numquam possimus quod tempora! Tenetur.</p>
+<h2 id="follower">I am the follower</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at cupiditate, dignissimos dolore, dolores doloribus dolorum eligendi eos esse excepturi illo ipsa necessitatibus nemo possimus praesentium ullam unde veritatis voluptatum.</p>
+<button id="font-changer">Change the font</button>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    //Dont forget the parentheses after a method
+    //otherwise the method WILL NOT WORK! Ex:
+
+    // var htmlMethod = $("#leader").html;
+    // console.log(htmlMethod);
+
+    // var followerContent = $("#follower").html();
+    // if (followerContent === "I am the follower");
+    //     $("#leader").html("And don't you forget it!");
+
+    // $("#font-changer").click(function (){
+    //     var currentFontFamily = $("body").css("font-family");
+    //     // alert(currentFontFamily);
+    //     if (currentFontFamily === "Times" || currentFontFamily === "serif") {
+    //     //Browser default font family: Chrome = Times | Firefox = serif
+    //         $("body").css("font-family", "sans-serif");
+    //     } else {
+    //         $("body").css("font-family", "Times");
+    //     }
+    // });
+
+    // $("h2").mouseenter(function (){
+    //     $(this).addClass("highlight");
+    // })
+    // $("h2").mouseleave(function (){
+    //     $(this).removeClass("highlight");
+    // })
+
+    // $("h2").hover(function (){
+    //     $(this).toggleClass("highlight");
+    // });
+
+    // $("h2").hover(function (e){
+    //     $(e.target).toggleClass("highlight");
+    // });
+
+
+</script>
+</body>
+</html>
