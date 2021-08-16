@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Warmups</title>
+</head>
+<body>
+<h1 id="goodMorning">Good Morning, Draco!</h1>
+<button id="afternoon">It's afternoon</button>
+<button id="morning">It's morning</button>
+<!--<button id="toggle" value="ON">Afternoon/Morning Toggle</button>-->
+<script>
+  var testBtn = document.getElementById("afternoon");
+
+  testBtn.addEventListener("click", function (){
+    document.getElementById("goodMorning").innerHTML = "Good Afternoon, Draco!";
+  });
+
+  var secondBtn = document.getElementById("morning");
+
+  secondBtn.addEventListener("click", function (){
+    document.getElementById("goodMorning").innerHTML = "Good Morning, Draco!";
+  });
+
+  // function toggleButton(button) {
+  //   if(document.getElementById("toggle").value=="OFF"){
+  //     document.getElementById("toggle").value="ON";}
+  //
+  //   else if(document.getElementById("toggle").value=="ON"){
+  //     document.getElementById("toggle").value="OFF";}
+  // }
+
+
+</script>
+</body>
+</html>
