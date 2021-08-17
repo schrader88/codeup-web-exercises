@@ -26,12 +26,25 @@
             width: 200px;
             margin: 15px auto;
             border: 1px solid black;
+            background-color: blue;
         }
 
         .flex-me {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+        }
+
+        #picture1 {
+            background-image: ;
+        }
+
+        #picture2 {
+            background-image: ;
+        }
+
+        #picture3 {
+            background-image: ;
         }
     </style>
 </head>
@@ -96,9 +109,9 @@
 </ul>
 <button class="li-yellow">Last List Item: Yellow</button>
 <section class="flex-me">
-    <div class="simple-box"></div>
-    <div class="simple-box"></div>
-    <div class="simple-box"></div>
+    <div id="picture1" class="simple-box"></div>
+    <div id="picture2" class="simple-box"></div>
+    <div id="picture3" class="simple-box"></div>
 </section>
 <section class="flex-me">
     <button>Swap</button>
@@ -148,6 +161,8 @@
         $("li").click(function (){
             $(element).children().first().next().toggleClass("blue-font")
         });
+
+
 
     });
     });
