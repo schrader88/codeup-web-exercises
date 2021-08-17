@@ -10,11 +10,20 @@
         }
 
         .highlight {
-            background-color: gold;
+            background-color: yellow;
+        }
+
+        .bolded-font {
+            font-weight: bold;
+        }
+
+        .blue-font {
+            color: blue;
         }
     </style>
 </head>
 <body>
+<main>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
     <dd class="invisible">Shawn Benge, Deputy Director, Operations, is exercising the delegated authority of the Director of the National Park Service.</dd>
@@ -49,6 +58,31 @@
 
 <button class="toggle-btn">Toggle Answers to FAQs</button>
 <!--<a href="#" class="toggle-btn">Link to Show Description</a>-->
+
+<ul>
+    <h3>The Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<ul>
+    <h3>The Other Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+
+<ul>
+    <h3>Yet Other Park</h3>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+    <li>Fact</li>
+</ul>
+<button class="li-yellow">Last List Item: Yellow</button>
+</main>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
     "use strict";
@@ -73,6 +107,25 @@
             $(this).toggleClass("highlight");
         });
 
+        // $(".li-yellow").click(function (){
+        //     $("main ul li").last().css("background-color", "yellow");
+        // });
+
+        $("main ul").each(function (index, element){
+            $(".li-yellow").click(function () {
+                $(element).children().last().toggleClass("highlight");
+            });
+        });
+
+        $("h3").click(function (){
+           $(this).siblings().toggleClass("bolded-font");
+        });
+
+        $("ul").each(function (index, element){
+        $("li").click(function (){
+            $(element).children().first().next().toggleClass("blue-font")
+        });
+    })
     });
 
 
