@@ -20,6 +20,19 @@
         .blue-font {
             color: blue;
         }
+
+        .simple-box {
+            height: 200px;
+            width: 200px;
+            margin: 15px auto;
+            border: 1px solid black;
+        }
+
+        .flex-me {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +95,16 @@
     <li>Fact</li>
 </ul>
 <button class="li-yellow">Last List Item: Yellow</button>
+<section class="flex-me">
+    <div class="simple-box"></div>
+    <div class="simple-box"></div>
+    <div class="simple-box"></div>
+</section>
+<section class="flex-me">
+    <button>Swap</button>
+    <button>Swap</button>
+    <button>Swap</button>
+</section>
 </main>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
@@ -125,7 +148,8 @@
         $("li").click(function (){
             $(element).children().first().next().toggleClass("blue-font")
         });
-    })
+
+    });
     });
 
 
