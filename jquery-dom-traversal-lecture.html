@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Traversing the DOM in jQuery</title>
+    <style>
+        section {
+            display: flex;
+        }
+
+        .sansSerif {
+            font-family: sans-serif;
+        }
+
+        .dark-mode {
+            color: white;
+            background-color: #313131;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -24,6 +38,9 @@
         <li>Augustus</li>
         <li>Horace</li>
     </ul>
+    <aside>
+        <button id="font-changer">Change Font of "Another topic"</button>
+    </aside>
 </main>
 <footer>
     <ul>
@@ -52,7 +69,29 @@
             }
         });
 
+        $("main ul li").first().css("font-size", "110%");
+        $("main ul li").last().css("text-decoration", "underline dotted");
 
+        // $("#font-changer").click(function (){
+        //    // $("main").children().css("font-family", "sans-serif");
+        //    $("main").children().toggleClass("sansSerif");
+        // });
+
+        $("#font-changer").click(function (){
+            $("main").children().first().next().next().toggleClass("sansSerif");
+        });
+
+        // $("h2").click(function (){
+        //    $(this).next().slideUp("slow");
+        // });
+
+        $("h2").click(function (){
+           $(this).next().slideToggle("slow");
+        });
+
+        $("h1").hover(function (){
+            $(this).parent().parent().toggleClass("dark-mode")
+        })
 
     });
 </script>
