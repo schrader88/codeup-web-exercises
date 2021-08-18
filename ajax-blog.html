@@ -6,14 +6,20 @@
 </head>
 <body>
 <div id="posts"></div>
+<button id="refresh">Refresh</button>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
     "use strict";
 
     $(document).ready(function (){
-
-
-
+        $.ajax("data/blog.json").done(function (data){
+            data.forEach(function (blog){
+                $("#posts").append("<section>" + "<h3>" + blog.title + "</h3>" + "<p>" + blog.content + "</p>" + "<span>" + blog.categories + "</span>")
+            });
+            $("#refresh").click(function () {
+                location.reload();
+            });
+        });
     });
 </script>
 </body>
