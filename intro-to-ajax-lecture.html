@@ -54,7 +54,12 @@
                     mural.artwork_title ? title = mural.artwork_title : title = "Untitled";
 
                     var title = (mural.artwork_title ?? "Undefined");
-                    $("#card-section").append("<article class='card'>" + "<p>" + title + "</p>" + "<p>" + mural.artist_credit + "</p>" + "<button class='more-info'>More Info</button>" + "<p class='index' style='display: none'>" + index + "</p>" + "</article>");
+                    $("#card-section").append("<article class='card'>" +
+                        "<p>" + title + "</p>" +
+                        "<p>" + mural.artist_credit + "</p>" +
+                        "<button class='more-info'>More Info</button>" +
+                        "<p class='index' style='display: none'>" + index + "</p>" +
+                        "</article>");
                 });
             });
             // $("#card-section").on("click", ".more-info", function () {
