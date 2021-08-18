@@ -12,15 +12,30 @@
 <script>
     "use strict";
 
-    $(document).ready(function (){
-        $.ajax("data/blog.json").done(function (data){
-            data.forEach(function (blog){
+    $(document).ready(function () {
+        $.ajax("data/blog.json").done(function (data) {
+            data.forEach(function (blog) {
                 $("#posts").append("<section>" + "<h3>" + blog.title + "</h3>" + "<p>" + blog.content + "</p>" + "<span>" + blog.categories + "</span>")
             });
             $("#refresh").click(function () {
                 location.reload();
             });
         });
+    });
+
+        function refreshAJAX() {
+            $.ajax("data/blog.json").done(function (data) {
+                data.forEach(function (blog) {
+                    $("#posts").append("<section>" + "<h3>" + blog.title + "</h3>" + "<p>" + blog.content + "</p>" + "<span>" + blog.categories + "</span>")
+                });
+                $("#refresh").click(function () {
+                    location.reload();
+                });
+            });
+        }
+        $("#refresh").click(function (){
+            $("#insertProducts").html("");
+            refreshAJAX();
     });
 </script>
 </body>
