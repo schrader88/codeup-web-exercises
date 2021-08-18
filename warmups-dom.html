@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Warmups</title>
+  <style>
+    .pink-bg {
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+<h1 id="goodMorning">Good Morning, Draco!</h1>
+<button id="afternoon">It's afternoon</button>
+<button id="morning">It's morning</button>
+<br>
+<section>
+  <button id="pink-btn1" data-number="1">Change Me</button>
+  <button id="pink-btn2" data-number="2">Change Me Too</button>
+  <button id="pink-btn3" data-number="3">Don't forget about me</button>
+  <p id="message"></p>
+</section>
+<button id="reset">Reset</button>
+<section>
+  <input type="text" id="wordToDisplay">
+  <button id="displayWord">Display in DOM</button>
+  <p id="word"></p>
+</section>
+<section>
+  <button id="create-an-element">Create an Element</button>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  var testBtn = document.getElementById("afternoon");
+
+  testBtn.addEventListener("click", function (){
+    document.getElementById("goodMorning").innerHTML = "Good Afternoon, Draco!";
+  });
+
+  var secondBtn = document.getElementById("morning");
+
+  secondBtn.addEventListener("click", function (){
+    document.getElementById("goodMorning").innerHTML = "Good Morning, Draco!";
+  });
+
+  $(document).ready(function (){
+
+    $("#pink-btn1").hover(function (){
+        $(this).toggleClass("pink-bg");
+    });
+    $("#pink-btn2").hover(function (){
+        $(this).toggleClass("pink-bg");
+    });
+    $("#pink-btn3").hover(function (){
+        $(this).toggleClass("pink-bg");
+    });
+
+    // Below will set the first header back to it's original text:
+
+    // var resetBtn = document.getElementById("reset");
+    //
+    // resetBtn.addEventListener("click", function (){
+    //   document.getElementById("goodMorning").innerHTML = "Good Morning, Draco!"
+    // });
+
+    // Below will refresh the page back to it's default:
+
+    $("#reset").click(function (){
+      location.reload();
+    });
+
+    $('section button').hover(
+    function (){
+      var number = $(this).attr('data-number');
+      $('#message').html(number)
+    },
+    function (){
+      $('#message').html("");
+    });
+
+    $("#displayWord").click(function (){
+      var wordToBeDisplayed = $("#wordToDisplay").val();
+      $("#word").html(wordToBeDisplayed);
+    });
+
+    $("#create-an-element").click(function (){
+      $(this).after("<p>I am new</p>");
+    })
+
+  });
+</script>
+</body>
+</html>
