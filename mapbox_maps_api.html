@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox 1</title>
+    <title>Mapbox API Exercises</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         #map {
@@ -27,7 +27,7 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [0, 0], // starting position [lng, lat]
-        zoom: 11 // starting zoom
+        zoom: 10 // starting zoom
     });
 
     geocode("Dallas, Texas", MAPBOX_API_TOKEN_EXAMPLE).then(function(result){
@@ -35,14 +35,62 @@
         // map.setZoom(10);
     });
 
-    var favRestaurant = new mapboxgl.Marker()
-        .setLngLat([-96.769604, 32.845801])
-        .addTo(map);
+    // var favRestaurant = new mapboxgl.Marker()
+    //     .setLngLat([-96.769604, 32.845801])
+    //     .addTo(map);
+    //
+    // var restaurantName = new mapboxgl.Popup().setHTML("<h1>Rusty Taco</h1>");
+    //
+    // favRestaurant.setPopup(restaurantName);
+    //
+    // var secFavRestaurant = new mapboxgl.Marker()
+    //     .setLngLat([-96.719827, 32.878765])
+    //     .addTo(map);
+    //
+    // var secRestaurantName = new mapboxgl.Popup().setHTML("<h1>Shady's Burgers and Brewhaha</h1>");
+    //
+    // secFavRestaurant.setPopup(secRestaurantName);
+    //
+    // var thirdFavRestaurant = new mapboxgl.Marker()
+    //     .setLngLat([-96.754843, 32.861189])
+    //     .addTo(map);
+    //
+    // var thirdRestaurantName = new mapboxgl.Popup().setHTML("<h1>Chick Fil A</h1>");
+    //
+    // thirdFavRestaurant.setPopup(thirdRestaurantName);
 
-    var restaurantName = new mapboxgl.Popup().setHTML("<h1>Rusty Taco</h1>");
 
-    favRestaurant.setPopup(restaurantName);
 
+    var restaurantInfo = [
+        {
+            address: "Rusty Taco",
+            popupHTML: "<h1>Rusty Taco</h1>",
+            longitude: -96.769604,
+            latitude: 32.845801
+        },
+        {
+            address: "Shady's Burgers and Brewhaha",
+            popupHTML: "<h1>Shady's Burgers and Brewhaha</h1>",
+            longitude: -96.719827,
+            latitude: 32.878765
+        },
+        {
+            address: "Chick Fil A",
+            popupHTML: "<h1>Chick Fil A</h1>",
+            longitude: -96.754843,
+            latitude: 32.861189
+        }
+    ]
+
+    restaurantInfo.forEach(function (restaurant){
+        var loopedMarker = new mapboxgl.Marker()
+            .setLngLat([restaurant.longitude, restaurant.latitude])
+            .addTo(map);
+
+        var restaurantName = new mapboxgl.Popup().setHTML(restaurant.popupHTML);
+
+        loopedMarker.setPopup(restaurantName);
+    });
 
 
 </script>
