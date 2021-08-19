@@ -12,7 +12,7 @@
   </style>
 </head>
 <body>
-
+<h1>Marker Coordinates: <span id="coordinates"></span></h1>
 <div id="map"></div>
 
 
@@ -29,7 +29,7 @@
     zoom: 12 // starting zoom
   });
 
-  var lincolnMemorial = new mapboxgl.Marker()
+  var lincolnMemorial = new mapboxgl.Marker({draggable: true})
           .setLngLat([-77.0502, 38.8893])
           .addTo(map);
 
@@ -38,6 +38,15 @@
   lincolnMemorial.setPopup(lincolnPopup);
 
 
+  // function dragEnd() {
+  //   var lngLat = lincolnMemorial.getLngLat();
+  //   var anywhereCoord = new mapboxgl.Popup().setHTML("<h1>" + lngLat.lng + ", " + lngLat.lat + "</h1>");
+  //   lincolnMemorial.setPopup(anywhereCoord);
+  // }
+
+  lincolnMemorial.on("dragend", function (){
+    document.querySelector("#coordinates").innerHTML = lincolnMemorial.getLngLat();
+  });
 
 </script>
 </body>
