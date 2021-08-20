@@ -3,8 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        #map {
+            width: 1200px;
+            height: 1200px;
+        }
+        .row {
+            flex-wrap: nowrap;
+        }
+    </style>
 </head>
 <body>
+
+<nav class="navbar navbar-light bg-primary justify-content-between">
+    <a class="navbar-brand">Weather Map</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a>Current city: <span id="current-city"></span></a>
+        </li>
+    </ul>
+</nav>
+
+<br>
+
+<form class="form-inline">
+    <span class="mr-sm-2">Place</span>
+    <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Example: City, State" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0 search-btn" type="submit">Search</button>
+</form>
+
+<br>
+<div class="container row">
+    <div class="card bg-light m-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description: <span class="description"></span></li>
+            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
+            <li class="list-group-item">Wind: <span class="wind"></span></li>
+            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
+        </ul>
+    </div>
+    <div class="card bg-light m-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description: <span class="description"></span></li>
+            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
+            <li class="list-group-item">Wind: <span class="wind"></span></li>
+            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
+        </ul>
+    </div>
+    <div class="card bg-light m-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description: <span class="description"></span></li>
+            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
+            <li class="list-group-item">Wind: <span class="wind"></span></li>
+            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
+        </ul>
+    </div>
+    <div class="card bg-light m-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description: <span class="description"></span></li>
+            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
+            <li class="list-group-item">Wind: <span class="wind"></span></li>
+            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
+        </ul>
+    </div>
+    <div class="card bg-light m-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Description: <span class="description"></span></li>
+            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
+            <li class="list-group-item">Wind: <span class="wind"></span></li>
+            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
+        </ul>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
 <script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/geocode-mapbox-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN_EXAMPLE;
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-96.7970, 32.7767], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    $.get("http://api.openweathermap.org/data/2.5/weather", {
+        appid: OPEN_WEATHER_API_KEY,
+        lat: 32.7767,
+        lon: -96.7970,
+        units: 'imperial',
+    }).done(function(data) {
+        console.log(data);
+        console.log(new Date(data.dt * 1000));
+        console.log(data.main.temp_min);
+        console.log(data.main.temp_max);
+        console.log(data.weather[0].description);
+        console.log(windCardinalDirection(data.wind.deg));
+        console.log(data.main.pressure);
+    });
+
+    var globalMarker = new mapboxgl.Marker({draggable: true})
+        .setLngLat([-96.7970, 32.7767])
+        .addTo(map);
+
+
+
+    function windCardinalDirection(degrees){
+        let cardinalDirection = '';
+        if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
+            cardinalDirection = "N";
+        } else if (degrees > 11.25 && degrees  <= 33.75) {
+            cardinalDirection = "NNE";
+        } else if (degrees > 33.75 && degrees <= 56.25) {
+            cardinalDirection = "NE";
+        } else if (degrees > 56.25 && degrees <= 78.75) {
+            cardinalDirection = "ENE";
+        } else if (degrees > 78.75 && degrees <= 101.25) {
+            cardinalDirection = "E";
+        } else if (degrees > 101.25 && degrees <= 123.75) {
+            cardinalDirection = "ESE";
+        } else if (degrees > 123.75 && degrees <= 146.25) {
+            cardinalDirection = "SE";
+        } else if (degrees > 146.25 && degrees <= 168.75) {
+            cardinalDirection = "SSE";
+        } else if (degrees > 168.75 && degrees <= 191.25) {
+            cardinalDirection = "S";
+        } else  if (degrees > 191.25 && degrees <= 213.75) {
+            cardinalDirection = "SSW";
+        } else if (degrees > 213.75 && degrees <= 236.25)  {
+            cardinalDirection = "SW";
+        } else if (degrees > 236.25 && degrees <= 258.75) {
+            cardinalDirection = "WSW";
+        } else if (degrees > 258.75 && degrees <= 281.25) {
+            cardinalDirection = "W";
+        } else if (degrees > 281.25 && degrees <= 303.75) {
+            cardinalDirection = "WNW";
+        } else if (degrees > 303.75 && degrees <= 326.25) {
+            cardinalDirection = "NW";
+        } else if (degrees > 326.75 && degrees <= 348.75) {
+            cardinalDirection = "NNW";
+        }
+        return cardinalDirection;
+    }
+
+</script>
 </body>
 </html>
