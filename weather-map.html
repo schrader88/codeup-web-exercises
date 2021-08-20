@@ -10,9 +10,6 @@
             width: 1200px;
             height: 1200px;
         }
-        .row {
-            flex-wrap: nowrap;
-        }
     </style>
 </head>
 <body>
@@ -29,79 +26,14 @@
 <br>
 
 <form class="form-inline">
-    <span class="mr-sm-2">Place</span>
-    <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Example: City, State" aria-label="Search">
-    <button class="btn btn-primary my-2 my-sm-0 search-btn" type="submit">Search</button>
+    <span class="m-sm-2">Place</span>
+    <input class="form-control mr-sm-2" id="search-bar" type="search" placeholder="Example: City, State" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0" id="search-btn" type="submit">Search</button>
 </form>
 
 <br>
-<div class="container row">
-    <div class="card bg-light m-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <span class="description"></span></li>
-            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
-            <li class="list-group-item">Wind: <span class="wind"></span></li>
-            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
-        </ul>
-    </div>
-    <div class="card bg-light m-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <span class="description"></span></li>
-            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
-            <li class="list-group-item">Wind: <span class="wind"></span></li>
-            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
-        </ul>
-    </div>
-    <div class="card bg-light m-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <span class="description"></span></li>
-            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
-            <li class="list-group-item">Wind: <span class="wind"></span></li>
-            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
-        </ul>
-    </div>
-    <div class="card bg-light m-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <span class="description"></span></li>
-            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
-            <li class="list-group-item">Wind: <span class="wind"></span></li>
-            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
-        </ul>
-    </div>
-    <div class="card bg-light m-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Description: <span class="description"></span></li>
-            <li class="list-group-item">Humidity: <span class="humidity"></span></li>
-            <li class="list-group-item">Wind: <span class="wind"></span></li>
-            <li class="list-group-item">Pressure: <span class="pressure"></span></li>
-        </ul>
-    </div>
-</div>
+
+<div class="container row" id="weather-cards"></div>
 
 <div id="map"></div>
 
@@ -113,7 +45,15 @@
 <script>
     "use strict";
 
-    mapboxgl.accessToken = MAPBOX_API_TOKEN_EXAMPLE;
+    var globalData;
+
+    var currentdate = new Date();
+    var datetime =
+        + (currentdate.getMonth()+1)  + "/"
+        + currentdate.getDate() + "/"
+        + currentdate.getFullYear();
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN_PERSONAL;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -121,26 +61,72 @@
         zoom: 12 // starting zoom
     });
 
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        appid: OPEN_WEATHER_API_KEY,
-        lat: 32.7767,
-        lon: -96.7970,
-        units: 'imperial',
-    }).done(function(data) {
-        console.log(data);
-        console.log(new Date(data.dt * 1000));
-        console.log(data.main.temp_min);
-        console.log(data.main.temp_max);
-        console.log(data.weather[0].description);
-        console.log(windCardinalDirection(data.wind.deg));
-        console.log(data.main.pressure);
-    });
-
     var globalMarker = new mapboxgl.Marker({draggable: true})
         .setLngLat([-96.7970, 32.7767])
         .addTo(map);
 
 
+    $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        appid: OPEN_WEATHER_API_KEY,
+        lat: 32.7767,
+        lon: -96.7970,
+        units: 'imperial',
+    }).done(function (data) {
+
+        console.log(data);
+
+        $("#weather-cards").html("");
+        data.daily.forEach(function (dailyWeather) {
+            $("#weather-cards").append('<div class="card bg-light m-3">' +
+                '<div class="card-header">' + new Date(dailyWeather.sunrise * 1000) + '</div>' +
+                '<div class="card-body">' +
+                '<p class="card-text">' + dailyWeather.temp.min + ", " + dailyWeather.temp.max + '</p>' +
+                '</div>' +
+                '<ul class="list-group list-group-flush">' +
+                '<li class="list-group-item">Description: <span class="description">' + dailyWeather.weather[0].description + '</span></li>' +
+                '<li class="list-group-item">Humidity: <span class="humidity">' + dailyWeather.humidity + '</span></li>' +
+                '<li class="list-group-item">Wind: <span class="wind">' + windCardinalDirection(dailyWeather.wind_deg) + '</span></li>' +
+                '<li class="list-group-item">Pressure: <span class="pressure">' + dailyWeather.pressure + '</span></li>' +
+                '</ul>' +
+                '</div>');
+        });
+
+    });
+
+
+    $("#search-btn").on("click", function (e){
+        e.preventDefault();
+        geocode($("#search-bar").val(), MAPBOX_API_TOKEN_PERSONAL).then(function(result){
+            map.setCenter(result);
+            console.log(result);
+
+            $.get("http://api.openweathermap.org/data/2.5/onecall", {
+                appid: OPEN_WEATHER_API_KEY,
+                lat: result[1],
+                lon: result[0],
+                units: 'imperial',
+            }).done(function (data) {
+
+                console.log(data);
+
+                $("#weather-cards").html("");
+                data.daily.forEach(function (dailyWeather) {
+                    $("#weather-cards").append('<div class="card bg-light m-3">' +
+                        '<div class="card-header">' + new Date(dailyWeather.sunrise * 1000) + '</div>' +
+                        '<div class="card-body">' +
+                        '<p class="card-text">' + dailyWeather.temp.min + ", " + dailyWeather.temp.max + '</p>' +
+                        '</div>' +
+                        '<ul class="list-group list-group-flush">' +
+                        '<li class="list-group-item">Description: <span class="description">' + dailyWeather.weather[0].description + '</span></li>' +
+                        '<li class="list-group-item">Humidity: <span class="humidity">' + dailyWeather.humidity + '</span></li>' +
+                        '<li class="list-group-item">Wind: <span class="wind">' + windCardinalDirection(dailyWeather.wind_deg) + '</span></li>' +
+                        '<li class="list-group-item">Pressure: <span class="pressure">' + dailyWeather.pressure + '</span></li>' +
+                        '</ul>' +
+                        '</div>');
+                });
+            });
+        });
+    });
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
