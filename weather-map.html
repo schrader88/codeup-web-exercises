@@ -104,6 +104,7 @@
         var newCoordinates = globalMarker.getLngLat();
         $("article").remove();
         getRequest(newCoordinates.lng, newCoordinates.lat);
+        $("#current-city").html(newCoordinates.lng + ", " + newCoordinates.lat)
     });
 
 
