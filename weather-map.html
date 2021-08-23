@@ -6,15 +6,20 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <style>
-        #map {
-            width: 1150px;
-            height: 1150px;
+        .everything-container{
+            height: 100vh;
+        }
+        #map{
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #000000;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-primary justify-content-between">
+
+<nav class="navbar navbar-light bg-primary justify-content-between mb-3">
     <a class="navbar-brand">Weather Map</a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -23,22 +28,22 @@
     </ul>
 </nav>
 
-<br>
+<div class="container-fluid">
+    <div class="no-gutters everything-container">
+        <form class="form-inline">
+            <span class="m-sm-2">Place</span>
+            <input class="form-control mr-sm-2" id="search-bar" type="search" placeholder="Example: City, State" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" id="search-btn" type="submit">Search</button>
+        </form>
 
-<form class="form-inline">
-    <span class="m-sm-2">Place</span>
-    <input class="form-control mr-sm-2" id="search-bar" type="search" placeholder="Example: City, State" aria-label="Search">
-    <button class="btn btn-primary my-2 my-sm-0" id="search-btn" type="submit">Search</button>
-</form>
+        <br>
 
-<br>
+        <div class="container">
+            <div class="row justify-content-center" id="weather-cards"></div>
+        </div>
 
-<div class="container">
-    <div class="row justify-content-center" id="weather-cards"></div>
-</div>
-
-<div class="container">
-    <div class="row justify-content-center" id="map"></div>
+        <div class="" id="map"></div>
+    </div>
 </div>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
@@ -61,6 +66,11 @@
         .setLngLat([-96.7970, 32.7767])
         .addTo(map);
 
+    globalMarker.on("dragend", function (){
+        var newCoordinates = globalMarker.getLngLat();
+        $("#weather-cards").remove();
+        getRequest(newCoordinates.lon, newCoordinates.lat);
+    });
 
     function getRequest (lon, lat) {
         $.get("http://api.openweathermap.org/data/2.5/onecall", {
@@ -72,14 +82,17 @@
 
                 $("#weather-cards").html("");
                 data.daily.forEach(function (dailyWeather, index) {
+                    var dayOfWeek = new Date(dailyWeather.sunrise * 1000);
+                    var displayDay = (new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(dayOfWeek));
+
                     if (index > 4) {
                         return;
                     }
 
-                    $("#weather-cards").append('<div class="card bg-light m-3">' +
-                        '<div class="card-header">' + new Date(dailyWeather.sunrise * 1000) + '</div>' +
+                    $("#weather-cards").append('<div class="card col-2 bg-light m-3">' +
+                        '<div class="card-header">' + displayDay + '</div>' +
                         '<div class="card-body">' +
-                        '<p class="card-text">' + dailyWeather.temp.min + ", " + dailyWeather.temp.max + '</p>' +
+                        '<p class="card-text">' + dailyWeather.temp.min + "°F" + " - " + dailyWeather.temp.max + "°F" + '</p>' +
                         '</div>' +
                         '<ul class="list-group list-group-flush">' +
                         '<li class="list-group-item">Description: <span class="description"><strong>' + dailyWeather.weather[0].description + '</strong></span></li>' +
@@ -104,12 +117,6 @@
             getRequest(result[0], result[1]);
         });
     });
-
-    globalMarker.on("dragend", function (result){
-
-    });
-
-
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
