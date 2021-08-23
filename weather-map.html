@@ -18,7 +18,7 @@
     <a class="navbar-brand">Weather Map</a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a>Current city: <span id="current-city">Dallas, TX</span></a>
+            <a>Current City: <span id="current-city">Dallas, TX</span></a>
         </li>
     </ul>
 </nav>
@@ -49,14 +49,6 @@
 <script>
     "use strict";
 
-    var globalData;
-
-    var currentdate = new Date();
-    var datetime =
-        + (currentdate.getMonth()+1)  + "/"
-        + currentdate.getDate() + "/"
-        + currentdate.getFullYear();
-
     mapboxgl.accessToken = MAPBOX_API_TOKEN_PERSONAL;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -70,69 +62,54 @@
         .addTo(map);
 
 
-    $.get("http://api.openweathermap.org/data/2.5/onecall", {
-        appid: OPEN_WEATHER_API_KEY,
-        lat: 32.7767,
-        lon: -96.7970,
-        units: 'imperial',
-    }).done(function (data) {
-
-        // console.log(data);
-
-        $("#weather-cards").html("");
-        data.daily.forEach(function (dailyWeather) {
-            $("#weather-cards").append('<div class="card bg-light m-3">' +
-                '<div class="card-header">' + new Date(dailyWeather.sunrise * 1000) + '</div>' +
-                '<div class="card-body">' +
-                '<p class="card-text">' + dailyWeather.temp.min + ", " + dailyWeather.temp.max + '</p>' +
-                '</div>' +
-                '<ul class="list-group list-group-flush">' +
-                '<li class="list-group-item">Description: <span class="description">' + dailyWeather.weather[0].description + '</span></li>' +
-                '<li class="list-group-item">Humidity: <span class="humidity">' + dailyWeather.humidity + '</span></li>' +
-                '<li class="list-group-item">Wind: <span class="wind">' + windCardinalDirection(dailyWeather.wind_deg) + '</span></li>' +
-                '<li class="list-group-item">Pressure: <span class="pressure">' + dailyWeather.pressure + '</span></li>' +
-                '</ul>' +
-                '</div>');
-        });
-
-    });
-
-
-    $("#search-btn").on("click", function (e){
-        e.preventDefault();
-        geocode($("#search-bar").val(), MAPBOX_API_TOKEN_PERSONAL).then(function(result){
-            map.setCenter(result);
-            // console.log(result);
-
-            $("#current-city").html($("#search-bar").val())
-
-            $.get("http://api.openweathermap.org/data/2.5/onecall", {
-                appid: OPEN_WEATHER_API_KEY,
-                lat: result[1],
-                lon: result[0],
-                units: 'imperial',
-            }).done(function (data) {
-
-                console.log(data);
+    function getRequest (lon, lat) {
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            appid: OPEN_WEATHER_API_KEY,
+            lat: lat,
+            lon: lon,
+            units: 'imperial',
+        }).done(function (data) {
 
                 $("#weather-cards").html("");
-                data.daily.forEach(function (dailyWeather) {
+                data.daily.forEach(function (dailyWeather, index) {
+                    if (index > 4) {
+                        return;
+                    }
+
                     $("#weather-cards").append('<div class="card bg-light m-3">' +
                         '<div class="card-header">' + new Date(dailyWeather.sunrise * 1000) + '</div>' +
                         '<div class="card-body">' +
                         '<p class="card-text">' + dailyWeather.temp.min + ", " + dailyWeather.temp.max + '</p>' +
                         '</div>' +
                         '<ul class="list-group list-group-flush">' +
-                        '<li class="list-group-item">Description: <span class="description">' + dailyWeather.weather[0].description + '</span></li>' +
-                        '<li class="list-group-item">Humidity: <span class="humidity">' + dailyWeather.humidity + '</span></li>' +
-                        '<li class="list-group-item">Wind: <span class="wind">' + windCardinalDirection(dailyWeather.wind_deg) + '</span></li>' +
-                        '<li class="list-group-item">Pressure: <span class="pressure">' + dailyWeather.pressure + '</span></li>' +
+                        '<li class="list-group-item">Description: <span class="description"><strong>' + dailyWeather.weather[0].description + '</strong></span></li>' +
+                        '<li class="list-group-item">Humidity: <span class="humidity"><strong>' + dailyWeather.humidity + '</strong></span></li>' +
+                        '<li class="list-group-item">Wind: <span class="wind"><strong>' + windCardinalDirection(dailyWeather.wind_deg) + '</strong></span></li>' +
+                        '<li class="list-group-item">Pressure: <span class="pressure"><strong>' + dailyWeather.pressure + '</strong></span></li>' +
                         '</ul>' +
                         '</div>');
                 });
-            });
+        });
+    }
+
+
+    $("#search-btn").on("click", function (e){
+        e.preventDefault();
+        geocode($("#search-bar").val(), MAPBOX_API_TOKEN_PERSONAL).then(function(result){
+            map.setCenter(result);
+            globalMarker.setLngLat(result);
+
+            $("#current-city").html($("#search-bar").val())
+
+            getRequest(result[0], result[1]);
         });
     });
+
+    globalMarker.on("dragend", function (result){
+
+    });
+
+
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
@@ -171,6 +148,8 @@
         }
         return cardinalDirection;
     }
+
+    getRequest(-96.7970, 32.7767);
 
 </script>
 </body>
