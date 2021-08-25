@@ -82,7 +82,7 @@ users.forEach((user, index) => {
 
 // TODO: Use `let` for the following variable
 
-let list = '<ul>';
+let list = `<ul>`;
 
 // TODO: rewrite the following loop to use a for..of loop
 
