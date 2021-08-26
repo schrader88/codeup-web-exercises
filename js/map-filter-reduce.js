@@ -55,7 +55,6 @@ let totalYears = users.reduce((total, person, index, array) => {
 let longestEmail = users.reduce((emailAccumulator, email, index, emailsArray) => {
     if (index === emailsArray.length - 1) {
         emailAccumulator.push(email.email);
-        // console.log(emailAccumulator);
         emailAccumulator.sort((a,b) => b.length -a.length)
         return emailAccumulator[0];
     } else {
@@ -69,14 +68,18 @@ let longestEmail = users.reduce((emailAccumulator, email, index, emailsArray) =>
 let allNames = users.reduce((total, nextName, index, array) => {
     if (index === array.length - 1) {
         total.push(nextName.name);
-        total.sort((a,b) => a.length - b.length)
-        return `Your instructors are: ${total}`;
+        return `Your instructors are: ${total.join(", ")}.`;
     } else {
         total.push(nextName.name);
         return total;
     }
 }, []);
 
-console.log(allNames);
-
 // console.log(allNames);
+
+let languagesCounted = users.reduce((total, language, index, array) => {
+    total.push(language.languages);
+    return total;
+}, []);
+
+console.log(languagesCounted);
