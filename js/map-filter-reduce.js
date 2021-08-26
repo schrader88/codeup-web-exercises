@@ -42,3 +42,37 @@ let threeOrMore = users.filter(item => item.languages.length > 2);
 
 // console.log(threeOrMore);
 
+let emailAddresses = users.map(item => item.email)
+
+// console.log(emailAddresses);
+
+let totalYears = users.reduce((total, person, index, array) => {
+    return total + person.yearsOfExperience / array.length;
+}, 0);
+
+// console.log(totalYears);
+
+let longestEmail = users.reduce((emailAccumulator, email, index, emailsArray) => {
+    if (index === emailsArray.length - 1) {
+        emailAccumulator.push(email.email);
+        // console.log(emailAccumulator);
+        emailAccumulator.sort((a,b) => b.length -a.length)
+        return emailAccumulator[0];
+    } else {
+        emailAccumulator.push(email.email);
+        return emailAccumulator;
+    }
+}, []);
+
+// console.log(longestEmail);
+
+let allNames = users.reduce((total, nextName, index, array) => {
+    total = total + nextName.name;
+    if (index === array.length - 1){
+
+    } else {
+        return `Your Instructors are: ${total}, `;
+    }
+}, []);
+
+// console.log(allNames);
