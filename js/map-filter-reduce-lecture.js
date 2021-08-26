@@ -95,3 +95,32 @@ const cars = [
 // let output = "";
 // mileages.forEach((item) => output += `<p>${item}</p>`);
 // $("#output").html(output);
+
+// .filter()
+
+const under10k = cars.filter(car => car.mileage < 10000);
+
+// Below is long-hand:
+
+// const under10K = cars.filter(function (car) {
+//     if (car.mileage < 10000) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
+
+// let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+// let affordablesWithTax = prices.filter(price => price < 10).map(price => {
+//     let tax = (price * 0.0825).toFixed(2);
+//     let total = ((parseFloat(price)) + parseFloat(tax)).toFixed(2);
+//     return parseFloat(total);
+// });
+
+// let output = "";
+// affordablesWithTax.forEach(function (item){
+//     output = output + "<p>" + item + "</p>";
+//     $("#output").html(output);
+// });
+
+// .reduce()
