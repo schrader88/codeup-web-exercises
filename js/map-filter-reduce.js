@@ -63,6 +63,15 @@ let longestEmail = users.reduce((emailAccumulator, email, index, emailsArray) =>
     }
 }, []);
 
+// Paris (Draco) solution:
+
+// let longestEmail = users.reduce((a,b) => {
+//     if (a.length < b.email.length) {
+//         a = b.email
+//     }
+//     return a
+// }, '')
+
 // console.log(longestEmail);
 
 let allNames = users.reduce((total, nextName, index, array) => {
@@ -77,9 +86,18 @@ let allNames = users.reduce((total, nextName, index, array) => {
 
 // console.log(allNames);
 
-let languagesCounted = users.reduce((total, language, index, array) => {
-    total.push(language.languages);
-    return total;
-}, []);
+// let languagesCounted = users.reduce((total, language, index, array) => {
+//     total.push(language.languages);
+//     return total;
+// }, []);
 
-console.log(languagesCounted);
+let uniqueUserLanguages = users.reduce(function(accumulator, user){
+    let languages = user.languages;
+    for (let i = 0; i < languages.length; i++){
+        if (!accumulator.includes(languages[i])){
+            accumulator.push(languages[i]);
+        }
+    }
+    return accumulator.sort();
+}, []);
+console.log(uniqueUserLanguages);
