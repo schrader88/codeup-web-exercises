@@ -67,12 +67,16 @@ let longestEmail = users.reduce((emailAccumulator, email, index, emailsArray) =>
 // console.log(longestEmail);
 
 let allNames = users.reduce((total, nextName, index, array) => {
-    total = total + nextName.name;
-    if (index === array.length - 1){
-
+    if (index === array.length - 1) {
+        total.push(nextName.name);
+        total.sort((a,b) => a.length - b.length)
+        return `Your instructors are: ${total}`;
     } else {
-        return `Your Instructors are: ${total}, `;
+        total.push(nextName.name);
+        return total;
     }
 }, []);
+
+console.log(allNames);
 
 // console.log(allNames);
