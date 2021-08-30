@@ -56,13 +56,35 @@
   //   console.log(error)
   // });
 
-  fetch(quoteUrl)
-    .then( response =>
-    response.json())
-    .then(data =>
-    console.log(data))
-    .catch( error =>
-    console.log(error));
+  // fetch(quoteUrl)
+  //   .then( response =>
+  //   response.json())
+  //   .then(data =>
+  //   console.log(data.quote))
+  //   .catch( error =>
+  //   console.log(error));
+
+  /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
+    Experiment with sending different shapes of data in the body of the request.
+ */
+
+  // https://hookb.in/03l9PLKzZLf3J0ooJYzr
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: "kws1997",
+      password: "yessir"
+    })
+  }
+
+  fetch("https://hookb.in/03l9PLKzZLf3J0ooJYzr", options)
+          .then(response => response.json())
+          .then(console.log)
+          .catch(console.error)
 
 </script>
 </body>
