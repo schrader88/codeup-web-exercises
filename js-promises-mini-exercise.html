@@ -25,11 +25,16 @@
 
   const aPromise = successIfEvenUTCSecond();
 
-  aPromise.then(function () {
-    console.log('VALUE_HERE is an even number!')
-  }).catch(function () {
-    console.log('VALUE_HERE is an odd number!')
-  })
+  // aPromise.then(function () {
+  //   console.log('VALUE_HERE is an even number!')
+  // }).catch(function () {
+  //   console.log('VALUE_HERE is an odd number!')
+  // });
+  aPromise.then(function (value) {
+    console.log(`${value} is an even number!`)
+  }).catch(function (value) {
+    console.log(`${value} is an odd number!`)
+  });
 
   // TODO: if aPromise resolves, console.log 'VALUE_HERE is an even number!'
   // TODO: if aPromise rejects, console.error 'VALUE_HERE is an odd number!'
