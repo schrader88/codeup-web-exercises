@@ -19,3 +19,8 @@ const output2 = input2.filter(number => number >= 0).reduce((total, number) => t
 
 // console.log(output2);
 
+// Calculate Median AND Mean
+
+const input3 = [12, 46, 32, 64];
+// We want: { mean: 38.5, median: 32 }
+// Mean = Average
