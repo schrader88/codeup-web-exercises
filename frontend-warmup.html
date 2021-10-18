@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Warmup</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<button id="hide-btn">Hide Paragraph</button>
+<p id="paragraph">This paragraph will disappear when the button is clicked.</p>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script>
+    // Vanilla JS without JQuery and without Bonus:
+
+    // var hideBtn = document.getElementById("hide-btn");
+
+    // hideBtn.addEventListener("click", function () {
+    //     document.getElementById("paragraph").style.display = "none";
+    // });
+
+    // JQuery to complete Bonus:
+
+    $(document).ready(function (){
+        $("#hide-btn").click(function (){
+            $("#paragraph").toggleClass("invisible");
+        });
+    });
+</script>
+</body>
+</html>
