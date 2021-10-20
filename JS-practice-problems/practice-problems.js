@@ -95,3 +95,75 @@ console.log(getFirstValue([-500, 0, 50]));
 // getFirstValue([1, 2, 3]) ➞ 1
 // getFirstValue([80, 5, 100]) ➞ 80
 // getFirstValue([-500, 0, 50]) ➞ -500
+
+// Create a function that takes voltage and current and returns the calculated power.
+
+function circuitPower(voltage, current) {
+    return voltage * current;
+}
+
+console.log(circuitPower(230, 10));
+console.log(circuitPower(110, 3));
+console.log(circuitPower(480, 20));
+
+// circuitPower(230, 10) ➞ 2300
+// circuitPower(110, 3) ➞ 330
+// circuitPower(480, 20) ➞ 9600
+
+// Write a function that converts hours into seconds.
+
+function howManySeconds(number) {
+    return (number * 60) * 60;
+}
+
+console.log(howManySeconds(2));
+console.log(howManySeconds(10));
+console.log(howManySeconds(24));
+
+// howManySeconds(2) ➞ 7200
+// howManySeconds(10) ➞ 36000
+// howManySeconds(24) ➞ 86400
+
+// Create a function that finds the maximum range of a triangle's third edge, where the side lengths are all integers.
+
+function nextEdge(num1, num2) {
+    return (num1 + num2) - 1;
+}
+
+console.log(nextEdge(8, 10));
+console.log(nextEdge(5, 7));
+console.log(nextEdge(9, 2));
+
+// nextEdge(8, 10) ➞ 17
+// nextEdge(5, 7) ➞ 11
+// nextEdge(9, 2) ➞ 10
+
+// Write a function where: Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+
+function remainder(num1, num2) {
+    return num1 % num2
+}
+
+console.log(remainder(1, 3));
+console.log(remainder(3, 4));
+console.log(remainder(-9, 45));
+console.log(remainder(5, 5));
+
+// remainder(1, 3) ➞ 1
+// remainder(3, 4) ➞ 3
+// remainder(-9, 45) ➞ -9
+// remainder(5, 5) ➞ 0
+
+// Create a function that takes length and width and finds the perimeter of a rectangle.
+
+function findPerimeter(num1, num2) {
+    return (num1 + num2) * 2;
+}
+
+console.log(findPerimeter(6, 7));
+console.log(findPerimeter(20, 10));
+console.log(findPerimeter(2, 9));
+
+// findPerimeter(6, 7) ➞ 26
+// findPerimeter(20, 10) ➞ 60
+// findPerimeter(2, 9) ➞ 22
