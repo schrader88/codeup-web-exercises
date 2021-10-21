@@ -167,3 +167,63 @@ console.log(findPerimeter(2, 9));
 // findPerimeter(6, 7) ➞ 26
 // findPerimeter(20, 10) ➞ 60
 // findPerimeter(2, 9) ➞ 22
+
+// Write a function that returns the string "something" joined with a space " " and the given argument a.
+
+function giveMeSomething(str) {
+    return "something " + str;
+}
+
+console.log(giveMeSomething("is better than nothing"));
+console.log(giveMeSomething("Bob Jane"));
+console.log(giveMeSomething("something"));
+
+// giveMeSomething("is better than nothing") ➞ "something is better than nothing"
+// giveMeSomething("Bob Jane") ➞ "something Bob Jane"
+// giveMeSomething("something") ➞ "something something"
+
+// Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+
+function addUp(number) {
+    var accumulator = 0;
+    for (var i = 1; i <= number; i++) {
+        accumulator += i;
+    }
+    return accumulator;
+}
+
+console.log(addUp(4));
+console.log(addUp(13));
+console.log(addUp(600));
+
+// addUp(4) ➞ 10
+// addUp(13) ➞ 91
+// addUp(600) ➞ 180300
+
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+
+function minMax(userArr) {
+    return [Math.min(...userArr), Math.max(...userArr)];
+}
+
+console.log(minMax([1, 2, 3, 4, 5]));
+console.log(minMax([2334454, 5]));
+console.log(minMax([1]));
+
+// minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+// minMax([2334454, 5]) ➞ [5, 2334454]
+// minMax([1]) ➞ [1, 1]
+
+// You are counting points for a basketball game, given the amount of 2-pointers scored and 3-pointers scored, find the final points for the team and return that value.
+
+function points(twos, threes) {
+    return (twos * 2) + (threes * 3);
+}
+
+console.log(points(1, 1));
+console.log(points(7, 5));
+console.log(points(38, 8));
+
+// points(1, 1) ➞ 5
+// points(7, 5) ➞ 29
+// points(38, 8) ➞ 100
