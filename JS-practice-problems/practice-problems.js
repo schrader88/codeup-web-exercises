@@ -227,3 +227,51 @@ console.log(points(38, 8));
 // points(1, 1) ➞ 5
 // points(7, 5) ➞ 29
 // points(38, 8) ➞ 100
+
+// A student learning JavaScript was trying to make a function. His code should concatenate a passed string name with string "Edabit" and store it in a variable called result. He needs your help to fix this code.
+
+function nameString(name) {
+    return name + "Edabit";
+}
+
+console.log(nameString("Mubashir"));
+console.log(nameString("Matt"));
+console.log(nameString("javascript"));
+
+// nameString("Mubashir") ➞ "MubashirEdabit"
+// nameString("Matt") ➞ "MattEdabit"
+// nameString("javaScript") ➞ "javaScriptEdabit"
+
+// Create a function that takes three arguments prob, prize, pay and returns true if prob * prize > pay; otherwise return false.
+
+function profitableGamble(prob, prize, pay) {
+    return (prob * prize) > pay;
+}
+
+console.log(profitableGamble(0.2, 50, 9));
+console.log(profitableGamble(.9, 1, 2));
+console.log(profitableGamble(.9, 3, 2));
+
+// profitableGamble(0.2, 50, 9) ➞ true
+// profitableGamble(0.9, 1, 2) ➞ false
+// profitableGamble(0.9, 3, 2) ➞ true
+
+// Create a function which returns the number of true values there are in an array.
+
+function countTrue(userArr) {
+    let accumulator = 0;
+    userArr.forEach(function(arr) {
+        if (arr === true) {
+            accumulator += 1;
+        }
+    });
+    return accumulator;
+}
+
+console.log(countTrue([true, false, false, true, false]));
+console.log(countTrue([false, false, false, false]));
+console.log(countTrue([]));
+
+// countTrue([true, false, false, true, false]) ➞ 2
+// countTrue([false, false, false, false]) ➞ 0
+// countTrue([]) ➞ 0
