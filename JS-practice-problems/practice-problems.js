@@ -275,3 +275,45 @@ console.log(countTrue([]));
 // countTrue([true, false, false, true, false]) ➞ 2
 // countTrue([false, false, false, false]) ➞ 0
 // countTrue([]) ➞ 0
+
+
+// COME BACK AND REFACTOR ======================================= THIS IS UGLY
+
+
+// Create a function that takes an object and returns the keys and values as separate arrays. Return the keys sorted alphabetically, and their corresponding values in the same order.
+
+function keysAndValues(userObj) {
+    return "[" + Object.keys(userObj) + "]" + " , " + "[" + Object.values(userObj) + "]";
+}
+
+console.log(keysAndValues({ a: 1, b: 2, c: 3 }));
+console.log(keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" }));
+console.log(keysAndValues({ key1: true, key2: false, key3: undefined }));
+
+// keysAndValues({ a: 1, b: 2, c: 3 })
+// ➞ [["a", "b", "c"], [1, 2, 3]]
+//
+// keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" })
+// ➞ [["a", "b", "c"], ["Apple", "Microsoft", "Google"]]
+//
+// keysAndValues({ key1: true, key2: false, key3: undefined })
+// ➞ [["key1", "key2", "key3"], [true, false, undefined]]
+
+// Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+
+function arrayOfMultiples(num, length) {
+    let accArr = [];
+    for (let i = 1; i <= length; i++) {
+        let newNum = num * i;
+        accArr.push(newNum);
+    }
+    return accArr;
+}
+
+console.log(arrayOfMultiples(7, 5));
+console.log(arrayOfMultiples(12, 10));
+console.log(arrayOfMultiples(17, 6));
+
+// arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+// arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+// arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
