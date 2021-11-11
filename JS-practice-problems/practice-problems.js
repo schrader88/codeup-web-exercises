@@ -333,16 +333,25 @@ console.log(areaOfCountry("Iran", 1648195));
 // areaOfCountry("USA", 9372610), "USA is 6.29% of the total world's landmass"
 // areaOfCountry("Iran", 1648195) ➞ "Iran is 1.11% of the total world's landmass"
 
-// Create a function that squares every digit of a number.
-// IN PROGRESS //
+// Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
 
-function squareDigits(number) {
-    let numToString = number.toString();
-    let numToArray = numToString.split().map(function (value) {
-        return parseInt(value);
-    });
+function calculator(numOne, sign, numTwo) {
+    if (sign === "*") {
+        return numOne * numTwo;
+    } else if (sign === "+") {
+        return numTwo + numTwo;
+    } else if (sign === "/") {
+        return numOne / numTwo;
+    } else if (sign === "-") {
+        return numOne - numTwo;
+    }
 }
 
-// squareDigits(9119) ➞ 811181
-// squareDigits(2483) ➞ 416649
-// squareDigits(3212) ➞ 9414
+console.log(calculator(2, "+", 2));
+console.log(calculator(2, "*", 2));
+console.log(calculator(4, "/", 2));
+
+// calculator(2, "+", 2) ➞ 4
+// calculator(2, "*", 2) ➞ 4
+// calculator(4, "/", 2) ➞ 2
+
